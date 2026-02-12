@@ -1,0 +1,4 @@
+*.o
+replace
+text.txt
+text.txt.replace
