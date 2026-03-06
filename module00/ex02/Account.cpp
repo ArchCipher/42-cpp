@@ -3,7 +3,6 @@
 #include "Account.hpp"
 
 using std::cout;
-using std::endl;
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -48,7 +47,7 @@ void	Account::displayAccountsInfos( void )
     cout << " accounts:" << getNbAccounts()
         << ";total:" << getTotalAmount()
         << ";deposits:" << getNbDeposits()
-        << ";withdrawals:" << getNbWithdrawals() << endl;
+        << ";withdrawals:" << getNbWithdrawals() << "\n";
 }
 
 Account::Account (int initial_deposit)
@@ -84,7 +83,7 @@ void Account::makeDeposit(int deposit)
     _totalAmount += deposit;
     _totalNbDeposits += 1;
     cout << ";amount:" << _amount
-        << ";nb_deposits:" << _nbDeposits << endl;
+        << ";nb_deposits:" << _nbDeposits << "\n";
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -104,7 +103,7 @@ bool	Account::makeWithdrawal( int withdrawal )
     _totalNbWithdrawals += 1;
     cout << withdrawal
         << ";amount:" << _amount
-        << ";nb_withdrawals:" << _nbWithdrawals << endl;
+        << ";nb_withdrawals:" << _nbWithdrawals << "\n";
     return (true);
 }
 
@@ -119,5 +118,5 @@ void	Account::displayStatus(void) const
     cout << " index:" << _accountIndex;
     cout << ";amount:" << _amount;
     cout << ";deposits:" << _nbDeposits;
-    cout << ";withdrawals:" << _nbWithdrawals << endl;
+    cout << ";withdrawals:" << _nbWithdrawals << "\n";
 }

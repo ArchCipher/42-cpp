@@ -43,7 +43,7 @@ int main()
     PhoneBook book;
     string str;
 
-    cout << PROMPT << endl;
+    cout << PROMPT << "\n";
     getline(cin, str);
     while(cin && str != "EXIT")
     {
@@ -51,7 +51,7 @@ int main()
             return (1);
         else if (str == "SEARCH" && !search_contact(book))
             return (1);
-        cout << PROMPT << endl;
+        cout << PROMPT << "\n";
         getline(cin, str);
     }
     return (0);
@@ -73,7 +73,7 @@ bool search_contact(const PhoneBook &book)
     getline(cin, str);
     while (cin && !valid_index(str))
     {
-        cout << E_INDEX << endl;
+        cout << E_INDEX << "\n";
         cout << "Enter index of entry: ";
         getline(cin, str);
     }
@@ -96,7 +96,7 @@ void display_contact(const Contact &cont, const string &idx)
     print_field(cont.getLastName());
     cout << "|";
     print_field(cont.getNickName());
-    cout << endl;
+    cout << "\n";
 }
 
 void print_field(const string &str)

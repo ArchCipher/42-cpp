@@ -4,9 +4,8 @@ HEADER = -I.
 
 SRC_FILES = main add_contact \
 			Contact PhoneBook
-OBJS = $(SRCS:.cpp=.o)
-
 SRCS = $(addsuffix .cpp, $(SRC_FILES))
+OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98

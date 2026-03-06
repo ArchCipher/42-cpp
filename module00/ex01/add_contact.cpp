@@ -56,7 +56,7 @@ string get_input(const string &name)
     getline(cin, str);
     while (cin && str.empty())
     {
-        cout << "ERROR: " << name << " cannot be empty" << endl;
+        cout << "ERROR: " << name << " cannot be empty\n";
         cout << name << ": ";
         getline(cin, str);
     }

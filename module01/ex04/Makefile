@@ -1,4 +1,4 @@
-NAME = replace
+NAME = copy-replace
 
 HEADER = -I.
 

@@ -1,7 +1,6 @@
 #include <iostream>
 
 using std::cout;
-using std::endl;
 
 static void    print_arg(std::string s);
 
@@ -11,7 +10,7 @@ int main(int ac, char **av)
 
     if (ac == 1)
     {
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
         return (0);
     }
     i = 1;
@@ -22,7 +21,7 @@ int main(int ac, char **av)
         if (av[i])
             cout << " ";
     }
-    cout << endl;
+    cout << "\n";
 }
 
 static void    print_arg(std::string s)
@@ -54,7 +53,7 @@ int main(int ac, char **av)
 
     if (ac == 1)
     {
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
         return (0);
     }
     i = 1;
@@ -71,6 +70,6 @@ int main(int ac, char **av)
         if (i + 1 < ac)
             cout << " ";
     }
-    cout << endl;
+    cout << "\n";
 }
 */
