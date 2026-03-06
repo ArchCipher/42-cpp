@@ -1,7 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, string name )
-{
+Zombie *zombieHorde(int N, string name) {
     Zombie *horde;
 
     horde = new Zombie[N];

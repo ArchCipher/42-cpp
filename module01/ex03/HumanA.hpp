@@ -1,14 +1,13 @@
 #ifndef HUMANA_HPP
-# define HUMANA_HPP
+#define HUMANA_HPP
 
 #include "Weapon.hpp"
 
-class HumanA
-{
+class HumanA {
     string _name;
     Weapon &_weapon;
 
-public:
+  public:
     HumanA(const string &name, Weapon &weapon);
     void attack();
 };

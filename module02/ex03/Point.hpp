@@ -1,19 +1,18 @@
-# ifndef POINT_HPP
+#ifndef POINT_HPP
 #define POINT_HPP
 
 #include "Fixed.hpp"
 
-class Point
-{
+class Point {
     const Fixed x;
     const Fixed y;
 
-public:
+  public:
     Point(void);
     Point(const float a, const float b);
     Point(const Fixed &a, const Fixed &b);
-    Point(const Point&copy);
-    Point& operator=(const Point &);
+    Point(const Point &copy);
+    Point &operator=(const Point &);
     ~Point(void);
 
     const Fixed &getX(void) const;

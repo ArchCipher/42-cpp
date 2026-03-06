@@ -1,8 +1,8 @@
 #ifndef MAIN_HPP
-# define MAIN_HPP
+#define MAIN_HPP
 
-#include <iostream>
 #include "PhoneBook.hpp"
+#include <iostream>
 
 #define PROMPT "What do you want to do: ADD/SEARCH/EXIT"
 #define E_INDEX "Error: Index out of range"
@@ -10,8 +10,8 @@
 
 using std::cin;
 using std::cout;
-using std::string;
 using std::getline;
+using std::string;
 
 bool add_contact(PhoneBook &book);
 

@@ -1,14 +1,18 @@
 #include "Fixed.hpp"
 
 // using initialiser list
-Fixed::Fixed(void) : raw_value(0) {}
+Fixed::Fixed(void) : raw_value(0) {
+}
 
-Fixed::Fixed(const int value) : raw_value(value << fractional_bits) {}
+Fixed::Fixed(const int value) : raw_value(value << fractional_bits) {
+}
 
 Fixed::Fixed(const float value)
-    : raw_value(roundf(value * (1 << fractional_bits))) {}
+    : raw_value(roundf(value * (1 << fractional_bits))) {
+}
 
-Fixed::Fixed(const Fixed &copy) : raw_value(copy.raw_value) {}
+Fixed::Fixed(const Fixed &copy) : raw_value(copy.raw_value) {
+}
 
 Fixed &Fixed::operator=(const Fixed &copy) {
     if (&copy != this)
@@ -16,17 +20,24 @@ Fixed &Fixed::operator=(const Fixed &copy) {
     return (*this);
 }
 
-Fixed::~Fixed(void) {}
+Fixed::~Fixed(void) {
+}
 
-int Fixed::getRawBits(void) const { return (raw_value); }
+int Fixed::getRawBits(void) const {
+    return (raw_value);
+}
 
-void Fixed::setRawBits(int const raw) { raw_value = raw; }
+void Fixed::setRawBits(int const raw) {
+    raw_value = raw;
+}
 
 float Fixed::toFloat(void) const {
     return ((float)raw_value / (1 << fractional_bits));
 }
 
-int Fixed::toInt(void) const { return (raw_value >> fractional_bits); }
+int Fixed::toInt(void) const {
+    return (raw_value >> fractional_bits);
+}
 
 bool Fixed::operator>(const Fixed &rhs) const {
     return (raw_value > rhs.raw_value);

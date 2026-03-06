@@ -2,13 +2,12 @@
 
 void test();
 
-int main( void )
-{
+int main(void) {
     Fixed a;
-    Fixed const b( 10 );
-    Fixed const c( 42.42f );
-    Fixed const d( b );
-    a = Fixed( 1234.4321f );
+    Fixed const b(10);
+    Fixed const c(42.42f);
+    Fixed const d(b);
+    a = Fixed(1234.4321f);
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
     std::cout << "c is " << c << std::endl;
@@ -36,10 +35,9 @@ Total bits = 32
 
 value = (-1)^sign * 1.mantissa * 2^(exponent - 127)
 */
-# include <iomanip>
+#include <iomanip>
 
-void test()
-{
+void test() {
     /*
     Precision: 0.1 cannot be represented exactly in floats and fixed point
     1/10 in binary is 0.00011001100110011001100110011...

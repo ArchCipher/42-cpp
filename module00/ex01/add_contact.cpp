@@ -1,24 +1,24 @@
-# include "main.hpp"
+#include "main.hpp"
 
-bool set_field(Contact &cont, void (Contact::*setter)(string), const string &name, string (*input_func)(const string&));
+bool set_field(Contact &cont, void (Contact::*setter)(string),
+               const string &name, string (*input_func)(const string &));
 string get_input(const string &name);
 string get_number(const string &name);
 bool valid_number(const string &str);
 
-bool add_contact(PhoneBook &book)
-{
+bool add_contact(PhoneBook &book) {
     Contact cont;
-    string  str;
+    string str;
 
     if (!set_field(cont, &Contact::setFirstName, "First Name", get_input))
         return (false);
     if (!set_field(cont, &Contact::setLastName, "Last Name", get_input))
         return (false);
-    if (!set_field(cont, &Contact::setNickName, "Nick Name", get_input)) 
+    if (!set_field(cont, &Contact::setNickName, "Nick Name", get_input))
         return (false);
-    if (!set_field(cont, &Contact::setNumber, "Phone Number", get_number)) 
+    if (!set_field(cont, &Contact::setNumber, "Phone Number", get_number))
         return (false);
-    if (!set_field(cont, &Contact::setDarkSecret, "Dark Secret", get_input))    
+    if (!set_field(cont, &Contact::setDarkSecret, "Dark Secret", get_input))
         return (false);
     book.setContact(cont);
     return (true);
@@ -37,8 +37,8 @@ NOTE:
     cont.*setter(str) becomes cont.*(setter(str))
 */
 
-bool set_field(Contact &cont, void (Contact::*setter)(string), const string &name, string (*input_func)(const string&))
-{
+bool set_field(Contact &cont, void (Contact::*setter)(string),
+               const string &name, string (*input_func)(const string &)) {
     string str;
 
     str = input_func(name);
@@ -48,14 +48,12 @@ bool set_field(Contact &cont, void (Contact::*setter)(string), const string &nam
     return (true);
 }
 
-string get_input(const string &name)
-{
+string get_input(const string &name) {
     string str;
 
     cout << name << ": ";
     getline(cin, str);
-    while (cin && str.empty())
-    {
+    while (cin && str.empty()) {
         cout << "ERROR: " << name << " cannot be empty\n";
         cout << name << ": ";
         getline(cin, str);
@@ -63,14 +61,12 @@ string get_input(const string &name)
     return (str);
 }
 
-string get_number(const string &name)
-{
-    string  str;
+string get_number(const string &name) {
+    string str;
 
     cout << name << ": ";
     getline(cin, str);
-    while (cin && (str.empty() || !valid_number(str)))
-    {
+    while (cin && (str.empty() || !valid_number(str))) {
         if (str.empty())
             cout << "Error: " << name << " cannot be empty\n";
         else
@@ -81,19 +77,17 @@ string get_number(const string &name)
     return (str);
 }
 
-bool valid_number(const string &str)
-{
-    size_t     digit_count;
-    size_t     len;
-    size_t     i;
-    
+bool valid_number(const string &str) {
+    size_t digit_count;
+    size_t len;
+    size_t i;
+
     len = str.length();
     digit_count = 0;
     i = 0;
     if (len > 1 && str[i] == '+')
         i++;
-    while (i < len)
-    {
+    while (i < len) {
         if (!std::isdigit(static_cast<unsigned char>(str[i])))
             return (false);
         i++;
