@@ -3,7 +3,8 @@
 
 #include "Fixed.hpp"
 
-class Point {
+class Point
+{
     const Fixed x;
     const Fixed y;
 
@@ -18,9 +19,9 @@ class Point {
     const Fixed &getX(void) const;
     const Fixed &getY(void) const;
 
-    Point operator-(const Point &rhs) const;
+    Point        operator-(const Point &rhs) const;
 
-    Fixed crossProduct(const Point &rhs) const;
+    Fixed        crossProduct(const Point &rhs) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Point &point);

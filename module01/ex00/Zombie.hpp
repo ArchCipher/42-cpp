@@ -5,7 +5,8 @@
 
 using std::string;
 
-class Zombie {
+class Zombie
+{
     string name;
 
   public:
@@ -15,6 +16,6 @@ class Zombie {
 };
 
 Zombie *newZombie(string name);
-void randomChump(string name);
+void    randomChump(string name);
 
 #endif

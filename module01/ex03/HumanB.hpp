@@ -3,8 +3,9 @@
 
 #include "Weapon.hpp"
 
-class HumanB {
-    string _name;
+class HumanB
+{
+    string  _name;
     Weapon *_weapon;
 
   public:

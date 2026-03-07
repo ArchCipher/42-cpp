@@ -38,13 +38,15 @@ NOTE:
     if getline is used after cin, it would only read the newline at first
 */
 
-int main() {
+int  main()
+{
     PhoneBook book;
-    string str;
+    string    str;
 
     cout << PROMPT << "\n";
     getline(cin, str);
-    while (cin && str != "EXIT") {
+    while (cin && str != "EXIT")
+    {
         if (str == "ADD" && !add_contact(book))
             return (1);
         else if (str == "SEARCH" && !search_contact(book))
@@ -55,19 +57,22 @@ int main() {
     return (0);
 }
 
-bool valid_index(const string &s) {
+bool valid_index(const string &s)
+{
     if (s.length() != 1)
         return (false);
     return (std::isdigit(s[0]) && (s[0] - '0') < MAX_CONTACTS);
 }
 
-bool search_contact(const PhoneBook &book) {
-    string str;
+bool search_contact(const PhoneBook &book)
+{
+    string       str;
     unsigned int idx;
 
     cout << "Enter index of entry: ";
     getline(cin, str);
-    while (cin && !valid_index(str)) {
+    while (cin && !valid_index(str))
+    {
         cout << E_INDEX << "\n";
         cout << "Enter index of entry: ";
         getline(cin, str);
@@ -79,9 +84,10 @@ bool search_contact(const PhoneBook &book) {
     return (true);
 }
 
-void display_contact(const Contact &cont, const string &idx) {
+void display_contact(const Contact &cont, const string &idx)
+{
     string str;
-    int field;
+    int    field;
 
     print_field(idx);
     cout << "|";
@@ -93,12 +99,14 @@ void display_contact(const Contact &cont, const string &idx) {
     cout << "\n";
 }
 
-void print_field(const string &str) {
+void print_field(const string &str)
+{
     int len;
     int pad;
 
     len = str.length();
-    if (len > 10) {
+    if (len > 10)
+    {
         cout.write(&str[0], 9) << ".";
         return;
     }

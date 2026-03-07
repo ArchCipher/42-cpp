@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class Harl {
+class Harl
+{
     void debug(void);
     void info(void);
     void warning(void);

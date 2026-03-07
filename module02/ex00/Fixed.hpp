@@ -3,8 +3,9 @@
 
 #include <iostream>
 
-class Fixed {
-    int raw_value;
+class Fixed
+{
+    int              raw_value;
     static const int fractional_bits = 8;
 
   public:
@@ -18,7 +19,7 @@ class Fixed {
 
     ~Fixed(void);
 
-    int getRawBits(void) const;
+    int  getRawBits(void) const;
     void setRawBits(int const raw);
 };
 

@@ -5,7 +5,8 @@
 
 using std::string;
 
-class Zombie {
+class Zombie
+{
     string name;
 
   public:

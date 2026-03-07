@@ -5,7 +5,8 @@
 
 using std::string;
 
-class Contact {
+class Contact
+{
     string firstName;
     string lastName;
     string nickName;
@@ -13,11 +14,11 @@ class Contact {
     string darkSecret;
 
   public:
-    void setFirstName(string name);
-    void setLastName(string name);
-    void setNickName(string name);
-    void setNumber(string num);
-    void setDarkSecret(string secret);
+    void          setFirstName(string name);
+    void          setLastName(string name);
+    void          setNickName(string name);
+    void          setNumber(string num);
+    void          setDarkSecret(string secret);
     const string &getFirstName() const;
     const string &getLastName() const;
     const string &getNickName() const;

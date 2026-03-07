@@ -1,6 +1,7 @@
 #include "Zombie.hpp"
 
-int main() {
+int main()
+{
     Zombie *one;
 
     one = newZombie("Zombie1");

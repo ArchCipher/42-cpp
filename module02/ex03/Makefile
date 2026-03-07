@@ -1,4 +1,4 @@
-NAME = bsp
+NAME = a.out
 
 HEADER = -I.
 

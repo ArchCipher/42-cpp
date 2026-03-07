@@ -2,11 +2,11 @@
 
 using std::cout;
 
-static void    print_arg(std::string s);
+static void print_arg(std::string s);
 
-int main(int ac, char **av)
+int         main(int ac, char **av)
 {
-    size_t      i;
+    size_t i;
 
     if (ac == 1)
     {
@@ -14,7 +14,7 @@ int main(int ac, char **av)
         return (0);
     }
     i = 1;
-    while(av[i])
+    while (av[i])
     {
         print_arg(av[i]);
         i++;
@@ -24,10 +24,10 @@ int main(int ac, char **av)
     cout << "\n";
 }
 
-static void    print_arg(std::string s)
+static void print_arg(std::string s)
 {
-    size_t      i;
-    size_t      len;
+    size_t i;
+    size_t len;
 
     i = 0;
     len = s.length();
@@ -37,7 +37,7 @@ static void    print_arg(std::string s)
             s[i] = std::toupper(static_cast<unsigned char>(s[i]));
         i++;
     }
-    cout << s; 
+    cout << s;
 }
 
 /*

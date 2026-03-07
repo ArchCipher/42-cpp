@@ -2,8 +2,10 @@
 
 using std::cout;
 
-int main(int ac, char **av) {
-    if (ac != 2) {
+int main(int ac, char **av)
+{
+    if (ac != 2)
+    {
         cout << "Usage: ./harFilter level\n";
         return (0);
     }

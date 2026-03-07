@@ -1,8 +1,8 @@
 #include "Point.hpp"
 
 Fixed cross(const Point &ab, const Point &ap);
-bool bsp(Point const a, Point const b, Point const c, Point const point);
-void test(Point &a, Point &b, Point &c, Point p);
+bool  bsp(Point const a, Point const b, Point const c, Point const point);
+void  test(Point &a, Point &b, Point &c, Point p);
 
 /*
     Binary Space Partition
@@ -14,7 +14,8 @@ void test(Point &a, Point &b, Point &c, Point p);
     If all cross product result in same sign, point is inside the triangle.
     If any cross product is 0, point is on the triangle
 */
-bool bsp(Point const a, Point const b, Point const c, Point const point) {
+bool  bsp(Point const a, Point const b, Point const c, Point const point)
+{
     Fixed ab_ap = (b - a).crossProduct(point - a);
     Fixed bc_bp = (c - b).crossProduct(point - b);
     Fixed ca_cp = (a - c).crossProduct(point - c);
@@ -26,7 +27,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
     return ((sign1 == sign2) && (sign2 == sign3));
 }
 
-int main(void) {
+int main(void)
+{
     Point a(0, 0);
     Point b(8, 0);
     Point c(2, 5);
@@ -42,6 +44,7 @@ int main(void) {
     return (0);
 }
 
-void test(Point &a, Point &b, Point &c, Point p) {
+void test(Point &a, Point &b, Point &c, Point p)
+{
     std::cout << p << " " << bsp(a, b, c, p) << "\n";
 }

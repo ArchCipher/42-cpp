@@ -1,28 +1,32 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using std::cout;
 using std::string;
 
-void replace_all(std::ifstream &infile, std::ofstream &outfile, const string &searchStr, const string &replaceStr);
-string replace_line(const string &line, const string &searchStr, const string &replaceStr);
+void   replace_all(std::ifstream &infile, std::ofstream &outfile,
+                   const string &searchStr, const string &replaceStr);
+string replace_line(const string &line, const string &searchStr,
+                    const string &replaceStr);
 
 // https://cplusplus.com/doc/tutorial/files/
-int main(int ac, char **av)
+int    main(int ac, char **av)
 {
     if (ac != 4)
-        return (cout << "Usage: ./replace <input_file> <search_string> <replacement_string>\n", 0);
+        return (cout << "Usage: ./replace <input_file> <search_string> "
+                        "<replacement_string>\n",
+                0);
     string searchStr = av[2];
     if (searchStr.empty())
         return (cout << "first RE may not be empty\n", 0);
-    string infileName = av[1];
+    string        infileName = av[1];
     std::ifstream infile(infileName);
     if (!infile.is_open())
     {
         cout << "Unable to open input file: " << infileName << "\n";
         return (1);
     }
-    string outfileName = infileName + ".replace";
+    string        outfileName = infileName + ".replace";
     std::ofstream outfile(outfileName);
     if (!outfile.is_open())
     {
@@ -36,7 +40,8 @@ int main(int ac, char **av)
     outfile.close();
 }
 
-void replace_all(std::ifstream &infile, std::ofstream &outfile, const string &searchStr, const string &replaceStr)
+void replace_all(std::ifstream &infile, std::ofstream &outfile,
+                 const string &searchStr, const string &replaceStr)
 {
     string line;
 
@@ -48,7 +53,8 @@ void replace_all(std::ifstream &infile, std::ofstream &outfile, const string &se
     }
 }
 
-string replace_line(const string &line, const string &searchStr, const string &replaceStr)
+string replace_line(const string &line, const string &searchStr,
+                    const string &replaceStr)
 {
     size_t found = line.find(searchStr);
     if (found == string::npos)

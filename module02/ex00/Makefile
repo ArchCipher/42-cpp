@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = a.out
 
 HEADER = -I.
 

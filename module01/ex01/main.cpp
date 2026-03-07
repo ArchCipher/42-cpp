@@ -1,8 +1,9 @@
 #include "Zombie.hpp"
 
-int main() {
+int main()
+{
     Zombie *horde;
-    int horde_size;
+    int     horde_size;
 
     horde_size = 10;
     horde = zombieHorde(horde_size, "ZombieHorde");
