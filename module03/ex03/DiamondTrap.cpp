@@ -1,7 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string Name)
-    : ClapTrap(Name + "_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name")
 {
     name = Name;
     std::cout << "DiamondTrap " << name << " was created\n";
