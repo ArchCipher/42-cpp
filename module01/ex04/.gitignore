@@ -1,4 +1,3 @@
 *.o
-copy-replace
 text.txt
 text.txt.replace

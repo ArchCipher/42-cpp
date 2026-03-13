@@ -9,12 +9,13 @@ class DiamondTrap : public ScavTrap, public FragTrap
     std::string name;
 
   public:
-    DiamondTrap(std::string Name);
-    DiamondTrap &operator=(const DiamondTrap &copy);
     ~DiamondTrap(void);
+    DiamondTrap(const std::string &my_name);
+
+    DiamondTrap       &operator=(const DiamondTrap &copy);
 
     const std::string &getName() const;
-    void               setName(std::string Name);
+    void               setName(const std::string &my_name);
     void               whoAmI();
 };
 

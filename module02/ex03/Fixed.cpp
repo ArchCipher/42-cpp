@@ -1,82 +1,72 @@
 #include "Fixed.hpp"
 
 // using initialiser list
-Fixed::Fixed(void) : raw_value(0)
-{
-}
+Fixed::Fixed(void) : rawValue(0) {}
 
-Fixed::Fixed(const int value) : raw_value(value << fractional_bits)
-{
-}
+Fixed::Fixed(const int value) : rawValue(value << fractionalBits) {}
 
 Fixed::Fixed(const float value)
-    : raw_value(roundf(value * (1 << fractional_bits)))
+    : rawValue(roundf(value * (1 << fractionalBits)))
 {
 }
 
-Fixed::Fixed(const Fixed &copy) : raw_value(copy.raw_value)
-{
-}
+Fixed::Fixed(const Fixed &copy) : rawValue(copy.rawValue) {}
 
 Fixed &Fixed::operator=(const Fixed &copy)
 {
     if (&copy != this)
-        raw_value = copy.raw_value;
+        rawValue = copy.rawValue;
     return (*this);
-}
-
-Fixed::~Fixed(void)
-{
 }
 
 int Fixed::getRawBits(void) const
 {
-    return (raw_value);
+    return (rawValue);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    raw_value = raw;
+    rawValue = raw;
 }
 
 float Fixed::toFloat(void) const
 {
-    return ((float)raw_value / (1 << fractional_bits));
+    return ((float)rawValue / (1 << fractionalBits));
 }
 
 int Fixed::toInt(void) const
 {
-    return (raw_value >> fractional_bits);
+    return (rawValue >> fractionalBits);
 }
 
 bool Fixed::operator>(const Fixed &rhs) const
 {
-    return (raw_value > rhs.raw_value);
+    return (rawValue > rhs.rawValue);
 }
 
 bool Fixed::operator<(const Fixed &rhs) const
 {
-    return (raw_value < rhs.raw_value);
+    return (rawValue < rhs.rawValue);
 }
 
 bool Fixed::operator>=(const Fixed &rhs) const
 {
-    return (raw_value >= rhs.raw_value);
+    return (rawValue >= rhs.rawValue);
 }
 
 bool Fixed::operator<=(const Fixed &rhs) const
 {
-    return (raw_value <= rhs.raw_value);
+    return (rawValue <= rhs.rawValue);
 }
 
 bool Fixed::operator==(const Fixed &rhs) const
 {
-    return (raw_value == rhs.raw_value);
+    return (rawValue == rhs.rawValue);
 }
 
 bool Fixed::operator!=(const Fixed &rhs) const
 {
-    return (raw_value != rhs.raw_value);
+    return (rawValue != rhs.rawValue);
 }
 
 // Explicit Fixed conversion is not required because the
@@ -104,27 +94,27 @@ Fixed Fixed::operator/(const Fixed &rhs) const
 
 Fixed &Fixed::operator++()
 {
-    ++raw_value;
+    ++rawValue;
     return (*this);
 }
 
 Fixed Fixed::operator++(int)
 {
     Fixed tmp(*this);
-    ++raw_value;
+    ++rawValue;
     return (tmp);
 }
 
 Fixed &Fixed::operator--()
 {
-    --raw_value;
+    --rawValue;
     return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
-    --raw_value;
+    --rawValue;
     return (tmp);
 }
 

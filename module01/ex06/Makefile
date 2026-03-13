@@ -1,4 +1,4 @@
-NAME = harlFilter
+NAME = a.out
 
 HEADER = -I.
 

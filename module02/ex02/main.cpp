@@ -21,13 +21,13 @@ int  main(void)
 {
     Fixed       a;
     Fixed const b(Fixed(5.05f) * Fixed(2));
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max(a, b) << std::endl;
+    std::cout << a << '\n';
+    std::cout << ++a << '\n';
+    std::cout << a << '\n';
+    std::cout << a++ << '\n';
+    std::cout << a << '\n';
+    std::cout << b << '\n';
+    std::cout << Fixed::max(a, b) << '\n';
     // test();
     return (0);
 }
@@ -42,18 +42,18 @@ void test()
     Fixed const e(Fixed(0) / Fixed(2));
     Fixed const f(Fixed(0) / Fixed(0));
     std::cout << "- Addition (5.05 + 2)\n";
-    std::cout << a << std::endl;
+    std::cout << a << '\n';
     std::cout << "- Subtraction (5.05 - 2)\n";
-    std::cout << b << std::endl;
+    std::cout << b << '\n';
     std::cout << "- Subtraction (2 - 5.05)\n";
     Fixed const rev(Fixed(2) - Fixed(5.05f));
-    std::cout << rev << std::endl;
+    std::cout << rev << '\n';
     std::cout << "- Division (5.05 / 2)\n";
-    std::cout << c << std::endl;
+    std::cout << c << '\n';
     std::cout << "- Division (5.05 / 0)\n";
-    std::cout << d << std::endl;
+    std::cout << d << '\n';
     std::cout << "- Division (0 / 2)\n";
-    std::cout << e << std::endl;
+    std::cout << e << '\n';
     std::cout << "- Division (0 / 0)\n";
-    std::cout << f << std::endl;
+    std::cout << f << '\n';
 }

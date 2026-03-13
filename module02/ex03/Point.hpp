@@ -9,12 +9,12 @@ class Point
     const Fixed y;
 
   public:
+    ~Point(void);
     Point(void);
-    Point(const float a, const float b);
+    Point(float a, float b);
     Point(const Fixed &a, const Fixed &b);
     Point(const Point &copy);
-    Point &operator=(const Point &);
-    ~Point(void);
+    Point       &operator=(const Point &);
 
     const Fixed &getX(void) const;
     const Fixed &getY(void) const;

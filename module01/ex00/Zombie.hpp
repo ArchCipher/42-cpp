@@ -10,12 +10,13 @@ class Zombie
     string name;
 
   public:
-    Zombie(const string &_name);
     ~Zombie();
+    Zombie(const string &my_name);
+
     void announce(void);
 };
 
-Zombie *newZombie(string name);
-void    randomChump(string name);
+Zombie *newZombie(string name);   // NOLINT(readability-identifier-naming)
+void    randomChump(string name); // NOLINT(readability-identifier-naming)
 
 #endif

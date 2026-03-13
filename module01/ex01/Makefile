@@ -1,4 +1,4 @@
-NAME = zombie_horde
+NAME = a.out
 
 HEADER = -I.
 

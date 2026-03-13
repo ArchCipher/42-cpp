@@ -1,8 +1,8 @@
 #include "Point.hpp"
 
 Fixed cross(const Point &ab, const Point &ap);
-bool  bsp(Point const a, Point const b, Point const c, Point const point);
-void  test(Point &a, Point &b, Point &c, Point p);
+bool  bsp(Point a, Point b, Point c, Point point);
+void  test(Point &a, Point &b, Point &c, const Point &p);
 
 /*
     Binary Space Partition
@@ -44,7 +44,7 @@ int main(void)
     return (0);
 }
 
-void test(Point &a, Point &b, Point &c, Point p)
+void test(const Point &a, const Point &b, const Point &c, const Point &p)
 {
     std::cout << p << " " << bsp(a, b, c, p) << "\n";
 }

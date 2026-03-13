@@ -6,19 +6,21 @@
 
 class Fixed
 {
-    int              raw_value;
-    static const int fractional_bits = 8;
+    int              rawValue;
+    static const int fractionalBits = 8;
 
   public:
+    ~Fixed(void) {}
+
     Fixed(void);
-    Fixed(const int value);
-    Fixed(const float value);
+    Fixed(int value);
+    Fixed(float value);
     Fixed(const Fixed &copy);
-    Fixed &operator=(const Fixed &copy);
-    ~Fixed(void);
+
+    Fixed              &operator=(const Fixed &copy);
 
     int                 getRawBits(void) const;
-    void                setRawBits(int const raw);
+    void                setRawBits(int raw);
 
     float               toFloat(void) const;
     int                 toInt(void) const;
@@ -36,11 +38,6 @@ class Fixed
     Fixed               operator-(const Fixed &rhs) const;
     Fixed               operator*(const Fixed &rhs) const;
     Fixed               operator/(const Fixed &rhs) const;
-
-    /*
-    The 4 increment/decrement operators, will increase or decrease the
-    fixed-point value by the smallest representable ϵ, such that 1 + ϵ>1.
-    */
 
     // pre increment
     Fixed              &operator++();

@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = a.out
 
 HEADER = -I.
 

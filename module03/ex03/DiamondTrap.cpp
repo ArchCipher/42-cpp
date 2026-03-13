@@ -1,8 +1,14 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name")
+DiamondTrap::~DiamondTrap()
 {
-    name = Name;
+    std::cout << "DiamondTrap " << name << " was destroyed\n";
+}
+
+DiamondTrap::DiamondTrap(const std::string &my_name)
+    : ClapTrap(my_name + "_clap_name")
+{
+    name = my_name;
     std::cout << "DiamondTrap " << name << " was created\n";
 }
 
@@ -16,21 +22,16 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
     return (*this);
 }
 
-DiamondTrap::~DiamondTrap()
-{
-    std::cout << "DiamondTrap " << name << " was destroyed\n";
-}
-
 const std::string &DiamondTrap::getName() const
 {
     return (name);
 }
 
-void DiamondTrap::setName(std::string Name)
+void DiamondTrap::setName(const std::string &my_name)
 {
     std::cout << "DiamondTrap setName : '" << name << "' was renamed to '"
-              << Name << "'.\n";
-    name = Name;
+              << my_name << "'.\n";
+    name = my_name;
 }
 
 void DiamondTrap::whoAmI()

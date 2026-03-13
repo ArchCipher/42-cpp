@@ -7,12 +7,13 @@ using std::string;
 
 class Weapon
 {
-    string _type;
+    string type;
 
   public:
     Weapon(const string &type);
+
     const string &getType();
-    void          setType(const string &type);
+    void          setType(const string &my_type);
 };
 
 #endif

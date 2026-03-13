@@ -4,6 +4,6 @@ Language: Cpp
 IndentWidth: 4
 ColumnLimit: 80
 BreakBeforeBraces: Allman
-AllowShortFunctionsOnASingleLine: None
+AllowShortFunctionsOnASingleLine: Empty
 AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments
 SeparateDefinitionBlocks: Always

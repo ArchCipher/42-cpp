@@ -1,16 +1,16 @@
 #include "Zombie.hpp"
 
-void Zombie::announce(void)
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
-}
-
 Zombie::~Zombie()
 {
     std::cout << name << ": Destructed\n";
 }
 
-void Zombie::setname(const string &_name)
+void Zombie::setname(const string &my_name)
 {
-    name = _name;
+    name = my_name;
+}
+
+void Zombie::announce(void)
+{
+    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
 }

@@ -5,12 +5,12 @@
 
 class HumanB
 {
-    string  _name;
-    Weapon *_weapon;
+    string  name;
+    Weapon *weapon;
 
   public:
     HumanB(const string &name);
-    void setWeapon(Weapon &weapon);
+    void setWeapon(Weapon &my_weapon);
     void attack();
 };
 

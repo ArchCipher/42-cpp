@@ -1,4 +1,4 @@
-NAME = violence
+NAME = a.out
 
 HEADER = -I.
 

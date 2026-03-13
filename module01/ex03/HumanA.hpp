@@ -5,8 +5,8 @@
 
 class HumanA
 {
-    string  _name;
-    Weapon &_weapon;
+    string  name;
+    Weapon &weapon;
 
   public:
     HumanA(const string &name, Weapon &weapon);

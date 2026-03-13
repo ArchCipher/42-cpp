@@ -1,7 +1,7 @@
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
-#include <iostream>
+#include <string>
 
 using std::string;
 
@@ -14,14 +14,16 @@ class Contact
     string darkSecret;
 
   public:
-    void          setFirstName(string name);
-    void          setLastName(string name);
-    void          setNickName(string name);
-    void          setNumber(string num);
-    void          setDarkSecret(string secret);
+    void          setFirstName(const string &name);
+    void          setLastName(const string &name);
+    void          setNickName(const string &name);
+    void          setNumber(const string &num);
+    void          setDarkSecret(const string &secret);
     const string &getFirstName() const;
     const string &getLastName() const;
     const string &getNickName() const;
+    const string &getNumber() const;
+    const string &getDarkSecret() const;
 };
 
 #endif

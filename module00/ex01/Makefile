@@ -2,7 +2,7 @@ NAME = phonebook
 
 HEADER = -I.
 
-SRC_FILES = main add_contact \
+SRC_FILES = main \
 			Contact PhoneBook
 SRCS = $(addsuffix .cpp, $(SRC_FILES))
 OBJS = $(SRCS:.cpp=.o)

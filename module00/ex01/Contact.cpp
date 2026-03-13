@@ -1,26 +1,26 @@
 #include "Contact.hpp"
 
-void Contact::setFirstName(string name)
+void Contact::setFirstName(const string &name)
 {
     firstName = name;
 }
 
-void Contact::setLastName(string name)
+void Contact::setLastName(const string &name)
 {
     lastName = name;
 }
 
-void Contact::setNickName(string name)
+void Contact::setNickName(const string &name)
 {
     nickName = name;
 }
 
-void Contact::setNumber(string num)
+void Contact::setNumber(const string &num)
 {
     phoneNumber = num;
 }
 
-void Contact::setDarkSecret(string secret)
+void Contact::setDarkSecret(const string &secret)
 {
     darkSecret = secret;
 }
@@ -38,4 +38,14 @@ const string &Contact::getLastName() const
 const string &Contact::getNickName() const
 {
     return (nickName);
+}
+
+const string &Contact::getNumber() const
+{
+    return (phoneNumber);
+}
+
+const string &Contact::getDarkSecret() const
+{
+    return (darkSecret);
 }

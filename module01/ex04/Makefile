@@ -1,4 +1,4 @@
-NAME = copy-replace
+NAME = a.out
 
 HEADER = -I.
 

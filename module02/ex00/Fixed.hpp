@@ -5,22 +5,17 @@
 
 class Fixed
 {
-    int              raw_value;
-    static const int fractional_bits = 8;
+    int              rawValue;
+    static const int fractionalBits = 8;
 
   public:
+    ~Fixed(void);
     Fixed(void);
-
-    // copy constructor
     Fixed(const Fixed &);
-
-    // copy assignment operator
     Fixed &operator=(const Fixed &copy);
 
-    ~Fixed(void);
-
-    int  getRawBits(void) const;
-    void setRawBits(int const raw);
+    int    getRawBits(void) const;
+    void   setRawBits(int raw);
 };
 
 #endif

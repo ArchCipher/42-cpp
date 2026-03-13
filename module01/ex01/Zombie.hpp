@@ -11,10 +11,12 @@ class Zombie
 
   public:
     ~Zombie();
-    void setname(const string &_name);
+
+    void setname(const string &my_name);
     void announce(void);
 };
 
-Zombie *zombieHorde(int N, string name);
+Zombie *zombieHorde(int    N,
+                    string name); // NOLINT(readability-identifier-naming)
 
 #endif
