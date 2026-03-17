@@ -4,11 +4,22 @@
 
 #define MAX 10
 
-void test_brain();
-void test_wrong();
+void test_cat_copy();
+void test_cat_assignment();
+void test_wrong_animal();
 
 int  main()
 {
+    // can instantiate Animal
+    Animal *animal = new Animal();
+    if (animal)
+    {
+        std::cout << "** can instantiate animal **\n";
+        delete animal;
+    }
+    srand((unsigned)time(0));
+    std::cout
+        << "\n--- create an array of Animal objects (half cat, half dog) ---\n";
     const Animal *cats_and_dogs[MAX];
     for (int i = 0; i < MAX; i++)
     {
@@ -23,33 +34,41 @@ int  main()
         cats_and_dogs[i]->makeSound();
         delete cats_and_dogs[i];
     }
-    // std::cout << "-----------------\n";
-    // test_brain();
-    // std::cout << "-----------------\n";
-    // test_wrong();
+    test_cat_copy();
+    test_cat_assignment();
+    test_wrong_animal();
     return 0;
 }
 
-void test_brain()
+void test_cat_copy()
 {
-    srand((unsigned)time(0));
-    Cat cat;
-    Cat kitten(cat);
-    Cat x;
+    std::cout << "\n--- test copy ---\n";
+    const Cat cat;
+    const Cat kitten(cat);
     std::cout << cat.getType() << " " << cat.getIdea(0) << "\n"
-              << kitten.getType() << " " << kitten.getIdea(0) << "\n"
+              << kitten.getType() << " " << kitten.getIdea(0) << "\n";
+}
+
+void test_cat_assignment()
+{
+    std::cout
+        << "\n--- test assignment (before (both)/after (only copy)) ---\n";
+    const Cat cat;
+    Cat       x;
+    std::cout << cat.getType() << " " << cat.getIdea(0) << "\n"
               << x.getType() << " " << x.getIdea(0) << "\n";
-    x = kitten;
+    x = cat;
     std::cout << x.getType() << " " << x.getIdea(0) << "\n";
 }
 
-void test_wrong()
+void test_wrong_animal()
 {
-    const WrongAnimal *wrongmeta = new WrongAnimal();
-    const WrongAnimal *wrongi = new WrongCat();
-    std::cout << wrongi->getType() << " " << std::endl;
-    wrongi->makeSound();
-    wrongmeta->makeSound();
-    delete wrongmeta;
-    delete wrongi;
+    std::cout << "\n--- test wrong animal---\n";
+    const WrongAnimal *meta = new WrongAnimal();
+    const WrongAnimal *i = new WrongCat();
+    std::cout << i->getType() << " \n";
+    i->makeSound();
+    meta->makeSound();
+    delete meta;
+    delete i;
 }

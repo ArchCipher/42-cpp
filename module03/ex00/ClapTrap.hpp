@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#define CLAP_HIT_PTS 10
+#define CLAP_ENERGY_PTS 10
+
 class ClapTrap
 {
     std::string  name;

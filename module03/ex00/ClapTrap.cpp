@@ -5,20 +5,23 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap " << name << " was destroyed\n";
 }
 
-ClapTrap::ClapTrap(void) : hitPoints(10), energyPoints(10), attackDamage(0) {}
-
-ClapTrap::ClapTrap(const std::string &my_name) : ClapTrap()
+ClapTrap::ClapTrap(void)
+    : hitPoints(CLAP_HIT_PTS), energyPoints(CLAP_ENERGY_PTS), attackDamage(0)
 {
-    name = my_name;
+}
+
+ClapTrap::ClapTrap(const std::string &my_name)
+    : name(my_name), hitPoints(CLAP_HIT_PTS), energyPoints(CLAP_ENERGY_PTS),
+      attackDamage(0)
+{
     std::cout << "ClapTrap " << name << " was created\n";
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy) : ClapTrap(copy.name)
+ClapTrap::ClapTrap(const ClapTrap &copy)
+    : name(copy.name), hitPoints(copy.hitPoints),
+      energyPoints(copy.energyPoints), attackDamage(copy.attackDamage)
 {
     std::cout << "ClapTrap copy constructor called\n";
-    hitPoints = copy.hitPoints;
-    energyPoints = copy.energyPoints;
-    attackDamage = copy.attackDamage;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &copy)

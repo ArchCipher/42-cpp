@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#define CLAP_HIT_PTS 10
+#define CLAP_ENERGY_PTS 10
+
 class ClapTrap
 {
   protected:
@@ -15,6 +18,8 @@ class ClapTrap
     ~ClapTrap(void);
     ClapTrap(void);
     ClapTrap(const std::string &my_name);
+    ClapTrap(const std::string &my_name, unsigned int hit_points,
+             unsigned int energy_points, unsigned int attack_damage);
     ClapTrap(const ClapTrap &copy);
     ClapTrap          &operator=(const ClapTrap &copy);
 

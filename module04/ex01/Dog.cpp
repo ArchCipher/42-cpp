@@ -1,24 +1,4 @@
 #include "Dog.hpp"
-#include <ctime>
-
-Dog::Dog() : Animal("Dog")
-{
-    brain = new Brain();
-    addDefaultIdeas();
-    std::cout << "Dog constructor called\n";
-}
-
-void Dog::addDefaultIdeas()
-{
-    for (int i = 0; i < MAX_IDEAS; i++)
-        brain->setIdea(dog_ideas[rand() % DOG_IDEAS], i);
-}
-
-Dog::Dog(const Dog &copy) : Animal(copy)
-{
-    brain = new Brain(*copy.brain);
-    std::cout << "Dog copy constructor called\n";
-}
 
 Dog::~Dog()
 {
@@ -26,8 +6,33 @@ Dog::~Dog()
     delete brain;
 }
 
-// Note: brain = copy.brain is shallow copy (SEGV)
-// deep copy : *brain = *copy.brain
+Dog::Dog() : Animal("Dog"), brain(new Brain())
+{
+    addDefaultIdeas();
+    std::cout << "Dog constructor called\n";
+}
+
+void Dog::addDefaultIdeas()
+{
+    static const std::string dog_ideas[DOG_IDEAS] = {
+        "woof... food...", "howl",       "play fetch",  "wag tail",
+        "eat bone",        "take a nap", "go for walk", "dig a hole",
+        "sniff...",        "chew toys"};
+    for (int i = 0; i < MAX_IDEAS; i++)
+        brain->setIdea(dog_ideas[arc4random() % DOG_IDEAS], i);
+}
+
+Dog::Dog(const Dog &copy) : Animal(copy), brain(new Brain(*copy.brain))
+{
+    std::cout << "Dog copy constructor called\n";
+}
+
+/*
+        Note: brain = copy.brain is shallow copy (SEGV)
+        deep copy : *brain = *copy.brain
+
+        https://hackmd.io/@ChloeIsCoding/S1D-y80bll
+*/
 Dog &Dog::operator=(const Dog &copy)
 {
     if (this != &copy)
@@ -44,9 +49,9 @@ const std::string &Dog::getIdea(unsigned int i) const
     return (brain->getIdea(i));
 }
 
-void Dog::setIdea(const std::string &Idea, unsigned int i)
+void Dog::setIdea(const std::string &idea, unsigned int i)
 {
-    brain->setIdea(Idea, i);
+    brain->setIdea(idea, i);
 }
 
 void Dog::makeSound() const

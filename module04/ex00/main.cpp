@@ -2,17 +2,16 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-void test_wrong();
-
-// void test_copy();
+void test_wrong_animal();
+void test_copy();
 
 int  main()
 {
     const Animal *meta = new Animal();
     const Animal *j = new Dog();
     const Animal *i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << j->getType() << " \n";
+    std::cout << i->getType() << " \n";
     i->makeSound();
     j->makeSound();
     meta->makeSound();
@@ -20,27 +19,27 @@ int  main()
     delete j;
     delete meta;
     std::cout << "-----------------\n";
-    test_wrong();
+    test_wrong_animal();
     // std::cout << "-----------------\n";
     // test_copy();
     return 0;
 }
 
-void test_wrong()
+void test_wrong_animal()
 {
-    const WrongAnimal *wrongmeta = new WrongAnimal();
-    const WrongAnimal *wrongi = new WrongCat();
-    std::cout << wrongi->getType() << " " << std::endl;
-    wrongi->makeSound();
-    wrongmeta->makeSound();
-    delete wrongmeta;
-    delete wrongi;
+    const WrongAnimal *meta = new WrongAnimal();
+    const WrongAnimal *i = new WrongCat();
+    std::cout << i->getType() << " \n";
+    i->makeSound();
+    meta->makeSound();
+    delete meta;
+    delete i;
 }
 
 void test_copy()
 {
-    Cat cat;
-    Cat cat2(cat);
-    Cat cat3;
-    cat3 = cat;
+    Cat        cat;
+    const Cat &cat2(cat);
+    Cat        cat3;
+    cat3 = cat2;
 }

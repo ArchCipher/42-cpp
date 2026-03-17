@@ -1,5 +1,10 @@
 #include "Brain.hpp"
 
+Brain::~Brain()
+{
+    std::cout << "Brain destructor called\n";
+}
+
 Brain::Brain()
 {
     std::cout << "Brain constructor called\n";
@@ -9,11 +14,6 @@ Brain::Brain(const Brain &copy)
 {
     std::cout << "Brain copy constructor called\n";
     setIdeas(copy.ideas);
-}
-
-Brain::~Brain()
-{
-    std::cout << "Brain destructor called\n";
 }
 
 Brain &Brain::operator=(const Brain &copy)
@@ -26,16 +26,16 @@ Brain &Brain::operator=(const Brain &copy)
     return (*this);
 }
 
-void Brain::setIdea(const std::string &Idea, unsigned int i)
+void Brain::setIdea(const std::string &my_idea, unsigned int i)
 {
     if (i < MAX_IDEAS)
-        ideas[i] = Idea;
+        ideas[i] = my_idea;
 }
 
-void Brain::setIdeas(const std::string (&Ideas)[MAX_IDEAS])
+void Brain::setIdeas(const std::string (&my_ideas)[MAX_IDEAS])
 {
     for (int i = 0; i < MAX_IDEAS; i++)
-        ideas[i] = Ideas[i];
+        ideas[i] = my_ideas[i];
 }
 
 const std::string &Brain::getIdea(unsigned int i) const
@@ -45,9 +45,4 @@ const std::string &Brain::getIdea(unsigned int i) const
     if (i < MAX_IDEAS)
         return (ideas[i]);
     return (empty);
-}
-
-const std::string *Brain::getIdeas() const
-{
-    return (ideas);
 }

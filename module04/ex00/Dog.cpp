@@ -1,5 +1,10 @@
 #include "Dog.hpp"
 
+Dog::~Dog()
+{
+    std::cout << "Dog destructor called\n";
+}
+
 Dog::Dog() : Animal("Dog")
 {
     std::cout << "Dog constructor called\n";
@@ -8,11 +13,6 @@ Dog::Dog() : Animal("Dog")
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
     std::cout << "Dog copy constructor called\n";
-}
-
-Dog::~Dog()
-{
-    std::cout << "Dog destructor called\n";
 }
 
 Dog &Dog::operator=(const Dog &copy)

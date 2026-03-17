@@ -8,22 +8,18 @@
 
 class Cat : public Animal
 {
-    Brain            *brain;
-    const std::string cat_ideas[CAT_IDEAS] = {
-        "meow... food...", "drink milk", "play with string", "lick paws",
-        "eat fish",        "take a nap", "hide in box",      "purr on lap",
-        "watch birds",     "scratch"};
-    void addDefaultIdeas();
+    Brain *brain;
+
+    void   addDefaultIdeas();
 
   public:
+    ~Cat();
     Cat();
     Cat(const Cat &copy);
-    ~Cat();
-
     Cat               &operator=(const Cat &copy);
 
     const std::string &getIdea(unsigned int i) const;
-    void               setIdea(const std::string &Idea, unsigned int i);
+    void               setIdea(const std::string &idea, unsigned int i);
 
     void               makeSound() const;
 };

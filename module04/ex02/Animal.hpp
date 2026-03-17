@@ -9,16 +9,18 @@ class Animal
     std::string type;
 
   public:
-    virtual ~Animal() = 0;
-    Animal();
-    Animal(std::string Type);
+    virtual ~Animal() {}
+
+    Animal() {}
+
+    Animal(const std::string &type);
     Animal(const Animal &copy);
     Animal            &operator=(const Animal &copy);
 
-    void               setType(std::string Type);
+    void               setType(const std::string &my_type);
     const std::string &getType() const;
 
-	// pure virtual function - no implementation, virtual and = 0
+    // pure virtual function - no implementation, virtual and = 0
     virtual void       makeSound() const = 0;
 };
 

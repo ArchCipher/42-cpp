@@ -6,75 +6,76 @@ using std::cout;
 void test_frag();
 void test_scav();
 void test_clap();
-void print(ClapTrap &trap);
+void print_status(ClapTrap &trap);
 
 int  main(void)
 {
-    cout << "ClapTrap tests\n\n";
     test_clap();
-    cout << "----------------------\n"
-         << "ScavTrap tests\n\n";
     test_scav();
-    cout << "----------------------\n"
-         << "FragTrap tests\n\n";
     test_frag();
 }
 
 void test_frag()
 {
+    cout << "\n--- Frag tests ---\n\n";
     FragTrap trap4("trap4");
-    print(trap4);
+    print_status(trap4);
 
     trap4.attack("X");
-    print(trap4);
-    trap4.takeDamage(10);
-    print(trap4);
-    trap4.beRepaired(10);
-    print(trap4);
+    print_status(trap4);
+    const unsigned int amount = 10;
+    trap4.takeDamage(amount);
+    print_status(trap4);
+    trap4.beRepaired(amount);
+    print_status(trap4);
 
     trap4.highFivesGuys();
 }
 
 void test_scav()
 {
+    cout << "\n--- Scav tests ---\n\n";
     ScavTrap trap1("trap1");
-    print(trap1);
+    print_status(trap1);
 
     trap1.attack("X");
-    print(trap1);
+    print_status(trap1);
 
     ScavTrap trap2(trap1);
     trap2.setName("trap2");
-    print(trap2);
+    print_status(trap2);
 
-    trap1.takeDamage(5);
-    print(trap1);
-    trap1.beRepaired(5);
-    print(trap1);
+    const unsigned int amount = 5;
+    trap1.takeDamage(amount);
+    print_status(trap1);
+    trap1.beRepaired(amount);
+    print_status(trap1);
 
     ScavTrap trap3("trap3");
-    print(trap3);
+    print_status(trap3);
     trap3 = trap1;
     trap3.setName("trap3");
-    print(trap3);
+    print_status(trap3);
 
     trap3.guardGate();
 }
 
 void test_clap()
 {
+    cout << "--- Clap tests ---\n\n";
     ClapTrap trap1("trap1");
-    print(trap1);
+    print_status(trap1);
 
+    const unsigned int amount = 4;
     trap1.attack("X");
-    print(trap1);
-    trap1.takeDamage(4);
-    print(trap1);
-    trap1.beRepaired(4);
-    print(trap1);
+    print_status(trap1);
+    trap1.takeDamage(amount);
+    print_status(trap1);
+    trap1.beRepaired(amount);
+    print_status(trap1);
 }
 
-void print(ClapTrap &trap)
+void print_status(ClapTrap &trap)
 {
     cout << "Trap " << trap.getName() << " has " << trap.getHitPoints()
          << " hit_points, " << trap.getEnergyPoints() << " energy_points, "

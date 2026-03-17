@@ -2,15 +2,20 @@
 #define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-#include <iostream>
+
+#define FRAG_HIT_PTS 100
+#define FRAG_ENERGY_PTS 100
+#define FRAG_DAMAGE 30
 
 class FragTrap : public ClapTrap
 {
   public:
     ~FragTrap(void);
     FragTrap(const std::string &name);
+    FragTrap(const FragTrap &copy);
+    FragTrap &operator=(const FragTrap &copy);
 
-    void highFivesGuys(void);
+    void      highFivesGuys(void);
 };
 
 #endif
