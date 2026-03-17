@@ -25,14 +25,14 @@ int    main(int ac, char **av)
     std::ifstream infile(infile_name);
     if (!infile.is_open())
     {
-        cout << "Unable to open input file: " << infile_name << "\n";
+        cout << "ERROR: Unable to open input file: " << infile_name << "\n";
         return (1);
     }
     string        outfile_name = infile_name + ".replace";
     std::ofstream outfile(outfile_name);
     if (!outfile.is_open())
     {
-        cout << "Unable to open outfile file: " << outfile_name << "\n";
+        cout << "ERROR: Unable to open outfile file: " << outfile_name << "\n";
         infile.close();
         return (1);
     }

@@ -4,6 +4,8 @@
 using std::cin;
 using std::cout;
 
+PhoneBook::PhoneBook(void) : idx(0) {}
+
 void PhoneBook::addContact()
 {
     Contact contact;

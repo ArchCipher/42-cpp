@@ -2,12 +2,12 @@
 
 Zombie::~Zombie()
 {
-    std::cout << name << ": Destructed\n";
+    std::cout << "Zombie " << name << " destructed\n";
 }
 
-Zombie::Zombie(const string &my_name)
+Zombie::Zombie(const string &my_name) : name(my_name)
 {
-    name = my_name;
+    std::cout << "Zombie " << name << " created\n";
 }
 
 void Zombie::announce(void)

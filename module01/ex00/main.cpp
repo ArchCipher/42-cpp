@@ -2,10 +2,9 @@
 
 int main()
 {
-    Zombie *one;
-
-    one = newZombie("Zombie1");
+    Zombie *one = newZombie("heap_zombie"); // allocates on heap
     one->announce();
     delete (one);
-    randomChump("Zombie2");
+
+    randomChump("stack_zombie"); // allocates on stack
 }

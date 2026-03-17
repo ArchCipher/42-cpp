@@ -32,7 +32,7 @@ int  main(void)
     std::cout << "b is " << b.toInt() << " as integer" << '\n';
     std::cout << "c is " << c.toInt() << " as integer" << '\n';
     std::cout << "d is " << d.toInt() << " as integer" << '\n';
-    // test();
+    test();
     return 0;
 }
 
@@ -44,7 +44,7 @@ void test()
     Precision: 0.1 cannot be represented exactly in floats and fixed point
     1/10 in binary is 0.00011001100110011001100110011...
     */
-    std::cout << "- Test precision of 0.1\n";
+    std::cout << "\n--- Test precision of 0.1 ---\n";
     Fixed const e(0.1f);
     float       f = 0.1;
     std::cout << std::setprecision(20);
@@ -54,14 +54,15 @@ void test()
     Max safe integer ≈ 8,388,607
     (2^31 - 1) >> 8 or INT_MAX >> fractional_bits
     */
-    std::cout << "- Test for overflow in Float point (Max ≈ 8,388,607)\n";
+    std::cout
+        << "\n--- Test for overflow in Float point (Max ≈ 8,388,607) ---\n";
     Fixed const g(10000000);
-    std::cout << "Float point (10000000) is " << g << '\n';
+    std::cout << "Float point (10,000,000) is " << g << '\n';
 
-    std::cout << "- Addition of 0.1 + 0.2\n";
+    std::cout << "\n--- Addition of 0.1 + 0.2 ---\n";
     float x = 0.1f + 0.2f;
     std::cout << "float  is " << x << "\n";
     Fixed y(0.1f);
     Fixed z(0.2f);
-    std::cout << "Fixed point is " << y.toFloat() + z.toFloat() << "\n";
+    std::cout << "Fixed point is " << y.toFloat() + z.toFloat() << "\n\n";
 }

@@ -36,7 +36,7 @@ void Harl::error(void)
 void Harl::complain(std::string level)
 {
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    int         i;
+    int         i = 0;
 
     for (i = 0; i < 4; i++)
     {

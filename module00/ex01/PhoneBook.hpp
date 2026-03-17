@@ -22,6 +22,8 @@ class PhoneBook
     static bool   validIndex(const string &str);
 
   public:
+    PhoneBook(void);
+
     void addContact();
     void searchContact() const;
 };

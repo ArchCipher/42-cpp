@@ -2,7 +2,7 @@
 
 Fixed cross(const Point &ab, const Point &ap);
 bool  bsp(Point a, Point b, Point c, Point point);
-void  test(Point &a, Point &b, Point &c, const Point &p);
+void  test(const Point &a, const Point &b, const Point &c, const Point &p);
 
 /*
     Binary Space Partition

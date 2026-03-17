@@ -10,7 +10,7 @@ int main(int ac, char **av)
         return (0);
     }
     std::string s;
-    size_t      len;
+    size_t      len = 0;
     for (int i = 1; i < ac; i++)
     {
         s = av[i];

@@ -7,20 +7,19 @@ Fixed::~Fixed(void)
     cout << "Destructor called\n";
 }
 
-// using initialiser list
 Fixed::Fixed(void) : rawValue(0)
 {
     cout << "Default constructor called\n";
 }
 
+// optional with member initializer
+// [cppcoreguidelines-prefer-member-initializer] Fixed::Fixed(const Fixed& copy)
+// : raw_value(copy.raw_value)
 Fixed::Fixed(const Fixed &copy)
 {
     cout << "Copy constructor called\n";
     rawValue = copy.getRawBits();
 }
-
-// optional using initialiser list
-// Fixed::Fixed(const Fixed& copy) : raw_value(copy.raw_value)
 
 Fixed &Fixed::operator=(const Fixed &copy)
 {

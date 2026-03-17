@@ -1,4 +1,5 @@
 #include "Account.hpp"
+#include <iomanip>
 #include <iostream>
 #include <time.h>
 
@@ -27,19 +28,6 @@ int Account::getNbDeposits(void)
 int Account::getNbWithdrawals(void)
 {
     return (_totalNbWithdrawals);
-}
-
-// https://cplusplus.com/reference/ctime/localtime/
-// https://cplusplus.com/reference/ctime/gmtime/
-void Account::_displayTimestamp(void)
-{
-    time_t     rawtime;
-    struct tm *ptm;
-
-    time(&rawtime);
-    ptm = localtime(&rawtime);
-    printf("[%04d%02d%02d_%02d%02d%02d]", ptm->tm_year + 1900, ptm->tm_mon + 1,
-           ptm->tm_mday, ptm->tm_hour, ptm->tm_min, ptm->tm_sec);
 }
 
 void Account::displayAccountsInfos(void)
@@ -107,8 +95,24 @@ int Account::checkAmount(void) const
 void Account::displayStatus(void) const
 {
     _displayTimestamp();
-    cout << " index:" << _accountIndex;
-    cout << ";amount:" << _amount;
-    cout << ";deposits:" << _nbDeposits;
-    cout << ";withdrawals:" << _nbWithdrawals << "\n";
+    cout << " index:" << _accountIndex << ";amount:" << _amount
+         << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals
+         << "\n";
+}
+
+/*
+        https://en.cppreference.com/w/cpp/chrono/c/gmtime.html
+        https://en.cppreference.com/w/cpp/chrono/c/localtime.html
+        https://en.cppreference.com/w/cpp/io/manip.html
+*/
+void Account::_displayTimestamp(void)
+{
+    time_t rawtime = 0;
+    time(&rawtime);
+    struct tm *ptm = localtime(&rawtime);
+
+    cout << "[" << ptm->tm_year + 1900 << std::setfill('0') << std::setw(2)
+         << ptm->tm_mon + 1 << std::setw(2) << ptm->tm_mday << "_"
+         << std::setw(2) << ptm->tm_hour << std::setw(2) << ptm->tm_min
+         << std::setw(2) << ptm->tm_sec << "] ";
 }

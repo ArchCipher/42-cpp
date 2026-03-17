@@ -12,16 +12,15 @@ Fixed::Fixed(void) : rawValue(0)
     cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const int value)
+Fixed::Fixed(const int value) : rawValue(value << fractionalBits)
 {
     cout << "Int constructor called\n";
-    rawValue = value << fractionalBits;
 }
 
 Fixed::Fixed(const float value)
+    : rawValue(roundf(value * (1 << fractionalBits)))
 {
     cout << "Float constructor called\n";
-    rawValue = roundf(value * (1 << fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &copy) : rawValue(copy.rawValue)
