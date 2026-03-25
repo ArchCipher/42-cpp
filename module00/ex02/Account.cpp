@@ -101,9 +101,9 @@ void Account::displayStatus(void) const
 }
 
 /*
-        https://en.cppreference.com/w/cpp/chrono/c/gmtime.html
-        https://en.cppreference.com/w/cpp/chrono/c/localtime.html
-        https://en.cppreference.com/w/cpp/io/manip.html
+    REFERENCES:
+        [std::gmtime](https://en.cppreference.com/w/cpp/chrono/c/gmtime.html)
+        [std::localtime](https://en.cppreference.com/w/cpp/chrono/c/localtime.html)
 */
 void Account::_displayTimestamp(void)
 {

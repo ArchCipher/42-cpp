@@ -28,10 +28,12 @@ Dog::Dog(const Dog &copy) : Animal(copy), brain(new Brain(*copy.brain))
 }
 
 /*
-        Note: brain = copy.brain is shallow copy (SEGV)
-        deep copy : *brain = *copy.brain
+    REFERENCES:
+        [C++ Orthodox Canonical Form](https://hackmd.io/@ChloeIsCoding/S1D-y80bll)
 
-        https://hackmd.io/@ChloeIsCoding/S1D-y80bll
+    NOTE:
+        brain = copy.brain is shallow copy (SEGV)
+        deep copy : *brain = *copy.brain
 */
 Dog &Dog::operator=(const Dog &copy)
 {

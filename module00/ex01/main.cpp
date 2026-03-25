@@ -10,20 +10,17 @@
         SEARCH: display a specific contact
         EXIT: exit the program
     DESCRIPTION:
-                Phonebook that can store a maximum of 8 contacts. If the user
-                tries to add a 9th contact, the oldest one is replaced by the
-   new one. No dynamic allocation, contacts is an array of 8 Contact objects.
-   Contact class represents a phonebook contact. PhoneBook class has an array of
-   8 Contact objects.
+        Phonebook that can store a maximum of 8 contacts. If the user
+        tries to add a 9th contact, the oldest one is replaced by the
+        new one. No dynamic allocation, contacts is an array of 8 Contact objects.
+        Contact class represents a phonebook contact. PhoneBook class has an array of
+        8 Contact objects.
 
         SEARCH: display a specific contact as a list of 4 columns: index, first
         name, last name, and nickname. Each column is 10 characters wide. A
-        pipe character (’|’) separates them. The text is right-aligned, and if
+        pipe character ('|') separates them. The text is right-aligned, and if
         the text is longer than the column, it is truncated and the last
-        displayable character is replaced by a dot (’.’).
-    REFERENCE:
-        https://cplusplus.com/reference/iomanip/
-        https://cplusplus.com/reference/string/string/
+        displayable character is replaced by a dot ('.').
 */
 
 /*

@@ -1,18 +1,18 @@
 #include "Fixed.hpp"
 
 /*
-        Reading:
-        https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html
-        https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
+    Reading:
+        [Understanding and Using Floating Point Numbers](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html)
+        [Introduction to Fixed Point Number Representation](https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html)
 
-        Floats:
+    Floats:
 
-        Total bits = 32
-        1 bit sign
-        8-bit exponent
-        23-bit mantissa (fraction)
+    Total bits = 32
+    1 bit sign
+    8-bit exponent
+    23-bit mantissa (fraction)
 
-        value = (-1)^sign * 1.mantissa * 2^(exponent - 127)
+    value = (-1)^sign * 1.mantissa * 2^(exponent - 127)
 */
 
 void test();

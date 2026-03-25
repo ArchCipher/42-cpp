@@ -3,19 +3,19 @@
 #include "WrongCat.hpp"
 
 /*
-Abstract class is a class that has atleast one pure virtual function.
-Abstract classes can never be instantiated
-Pure virtual function is a function that must be implemented in its derived
-class.
+    Abstract class is a class that has atleast one pure virtual function.
+    Abstract classes can never be instantiated
+    Pure virtual function is a function that must be implemented in its derived
+    class.
 
-https://www.youtube.com/watch?v=T8f4ajtFU9g
-https://www.youtube.com/watch?v=FGToBKDO8Zc
+    REFERENCES:
+        [Relationship between Virtual Functions, Pure Virtual Functions and Abstract Classes]https://www.youtube.com/watch?v=T8f4ajtFU9g
+        [C++ Tutorial: Abstract Classes and Interfaces](https://www.youtube.com/watch?v=FGToBKDO8Zc)
 
-void               makeSound() const override;
-// prevents child class from overriding this any further
-void               makeSound() const final override;
-// marking a class as final prevents inheritance from it
-class DiamondTrap final
+    NOTES:
+        void makeSound() const override; // prevents child class from overriding this any further
+        void makeSound() const final override; // marking a class as final prevents inheritance from it
+        class DiamondTrap final // marking a class as final prevents inheritance from it
 */
 
 #define MAX 10

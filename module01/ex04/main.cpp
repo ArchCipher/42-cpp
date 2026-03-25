@@ -9,7 +9,17 @@ void   replace_all(std::ifstream &infile, std::ofstream &outfile,
 string replace_line(const string &line, const string &search_str,
                     const string &replace_str);
 
-// https://cplusplus.com/doc/tutorial/files/
+/*
+    NAME
+        replace
+    USAGE:
+        ./replace <input_file> <search_string> <replacement_string>
+    DESCRIPTION:
+        Replace all occurrences of a search string with a replacement string in a file.
+    REFERENCES:
+        [Input/Output with files](https://cplusplus.com/doc/tutorial/files/)
+*/
+
 int    main(int ac, char **av)
 {
     if (ac != 4)

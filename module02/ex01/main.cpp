@@ -1,18 +1,18 @@
 #include "Fixed.hpp"
 
 /*
-Reading:
-https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html
-https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
+    Reading:
+        [Understanding and Using Floating Point Numbers](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html)
+        [Introduction to Fixed Point Number Representation](https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html)
 
-Floats:
+    Floats:
 
-Total bits = 32
-1 bit sign
-8-bit exponent
-23-bit mantissa (fraction)
+    Total bits = 32
+    1 bit sign
+    8-bit exponent
+    23-bit mantissa (fraction)
 
-value = (-1)^sign * 1.mantissa * 2^(exponent - 127)
+    value = (-1)^sign * 1.mantissa * 2^(exponent - 127)
 */
 
 void test();
@@ -40,20 +40,17 @@ int  main(void)
 
 void test()
 {
-    /*
-    Precision: 0.1 cannot be represented exactly in floats and fixed point
-    1/10 in binary is 0.00011001100110011001100110011...
-    */
+    // Precision: 0.1 cannot be represented exactly in floats and fixed point
+    // 1/10 in binary is 0.00011001100110011001100110011...
     std::cout << "\n--- Test precision of 0.1 ---\n";
     Fixed const e(0.1f);
     float       f = 0.1;
     std::cout << std::setprecision(20);
     std::cout << "Fixed point is " << e << '\n';
     std::cout << "float is " << f << '\n';
-    /*
-    Max safe integer ≈ 8,388,607
-    (2^31 - 1) >> 8 or INT_MAX >> fractional_bits
-    */
+
+    // Max safe integer ≈ 8,388,607
+    // (2^31 - 1) >> 8 or INT_MAX >> fractional_bits
     std::cout
         << "\n--- Test for overflow in Float point (Max ≈ 8,388,607) ---\n";
     Fixed const g(10000000);

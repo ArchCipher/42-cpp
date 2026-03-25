@@ -1,18 +1,18 @@
 #include "Fixed.hpp"
 
 /*
-Reading:
-https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html
-https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
+    Reading:
+        [Understanding and Using Floating Point Numbers](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html)
+        [Introduction to Fixed Point Number Representation](https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html)
 
-The Orthodox Canonical Form in C++ involves defining
-5 special member functions for a class.
+    The Orthodox Canonical Form in C++ involves defining
+    5 special member functions for a class.
 
-1. Default Constructor
-2. Parameterized Constructor
-3. Copy Constructor
-4. Assignment Operator
-5. Destructor
+    1. Default Constructor
+    2. Parameterized Constructor
+    3. Copy Constructor
+    4. Assignment Operator
+    5. Destructor
 */
 
 int main(void)

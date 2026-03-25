@@ -138,8 +138,8 @@ void test_create_materia_ownership()
 }
 
 /*
-        create_materia type is case-sensitive
-        only accepts "ice" or "cure"
+    create_materia type is case-sensitive
+    only accepts "ice" or "cure"
 */
 void test_create_materia_string()
 {
