@@ -2,7 +2,7 @@ NAME = a.out
 
 HEADER = -I.
 
-SRC_FILES = main Fixed Point
+SRC_FILES = main Fixed Point bsp
 SRCS = $(addsuffix .cpp, $(SRC_FILES))
 OBJS = $(SRCS:.cpp=.o)
 
