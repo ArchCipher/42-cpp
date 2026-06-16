@@ -25,13 +25,13 @@ initialization lists, static, const, and other basic syntax
 - **Module 04** – Subtype polymorphism, abstract classes and interfaces
   Focus: virtual destructors, abstract classes (`Animal`, `AMateria`), interfaces (`ICharacter`, `IMateriaSource`), deep copy and ownership.
 
-- **Module 05** – Repetition and exceptions (**In progress**)  
+- **Module 05** – Repetition and exceptions
   Focus: exception-safe code, error handling patterns, control flow with exceptions.
 
-- **Module 06** – C++ casts (**Not started**)  
+- **Module 06** – C++ casts
   Focus: `static_cast`, `dynamic_cast`, `reinterpret_cast`, `const_cast`, and when each is appropriate.
 
-- **Module 07** – C++ templates (**Not started**)  
+- **Module 07** – C++ templates (**In progress**)
   Focus: function templates, class templates, generic algorithms.
 
 - **Module 08** – Templated containers, iterators, algorithms (**Not started**)  

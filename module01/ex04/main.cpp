@@ -15,7 +15,8 @@ string replace_line(const string &line, const string &search_str,
     USAGE:
         ./replace <input_file> <search_string> <replacement_string>
     DESCRIPTION:
-        Replace all occurrences of a search string with a replacement string in a file.
+        Replace all occurrences of a search string with a replacement string in
+        a file.
     REFERENCES:
         [Input/Output with files](https://cplusplus.com/doc/tutorial/files/)
 */

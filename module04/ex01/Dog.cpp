@@ -29,7 +29,8 @@ Dog::Dog(const Dog &copy) : Animal(copy), brain(new Brain(*copy.brain))
 
 /*
     REFERENCES:
-        [C++ Orthodox Canonical Form](https://hackmd.io/@ChloeIsCoding/S1D-y80bll)
+        [C++ Orthodox Canonical Form]
+        (https://hackmd.io/@ChloeIsCoding/S1D-y80bll)
 
     NOTE:
         brain = copy.brain is shallow copy (SEGV)

@@ -46,16 +46,16 @@ void Harl::complain(std::string level)
 
     switch (i)
     {
-    default:
-        cout << "[ Probably complaining about insignificant problems ]\n";
-        break;
-    case 0:
-        debug();
-    case 1:
-        info();
-    case 2:
-        warning();
-    case 3:
-        error();
+        default:
+            cout << "[ Probably complaining about insignificant problems ]\n";
+            break;
+        case 0:
+            debug();
+        case 1:
+            info();
+        case 2:
+            warning();
+        case 3:
+            error();
     }
 }

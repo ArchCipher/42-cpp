@@ -12,9 +12,9 @@
     DESCRIPTION:
         Phonebook that can store a maximum of 8 contacts. If the user
         tries to add a 9th contact, the oldest one is replaced by the
-        new one. No dynamic allocation, contacts is an array of 8 Contact objects.
-        Contact class represents a phonebook contact. PhoneBook class has an array of
-        8 Contact objects.
+        new one. No dynamic allocation, contacts is an array of 8 Contact
+        objects. Contact class represents a phonebook contact. PhoneBook class
+        has an array of 8 Contact objects.
 
         SEARCH: display a specific contact as a list of 4 columns: index, first
         name, last name, and nickname. Each column is 10 characters wide. A

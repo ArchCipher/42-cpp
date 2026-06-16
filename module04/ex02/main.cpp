@@ -9,13 +9,18 @@
     class.
 
     REFERENCES:
-        [Relationship between Virtual Functions, Pure Virtual Functions and Abstract Classes]https://www.youtube.com/watch?v=T8f4ajtFU9g
-        [C++ Tutorial: Abstract Classes and Interfaces](https://www.youtube.com/watch?v=FGToBKDO8Zc)
+        [Virtual Functions, Pure Virtual Functions and Abstract Classes]
+    (https://www.youtube.com/watch?v=T8f4ajtFU9g)
+        [C++ Tutorial: Abstract Classes and Interfaces]
+    (https://www.youtube.com/watch?v=FGToBKDO8Zc)
 
     NOTES:
-        void makeSound() const override; // prevents child class from overriding this any further
-        void makeSound() const final override; // marking a class as final prevents inheritance from it
-        class DiamondTrap final // marking a class as final prevents inheritance from it
+        - prevents child class from overriding this any further
+        void makeSound() const override;
+        - marking a class as final prevents inheritance from it
+        void makeSound() const final override;
+        - marking a class as final prevents inheritance from it
+        class DiamondTrap final
 */
 
 #define MAX 10
