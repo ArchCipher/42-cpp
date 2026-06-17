@@ -24,7 +24,7 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 void RobotomyRequestForm::performAction() const
 {
     std::cout << "*** DRILLING NOISES ***\n";
-    if (std::rand() % 2)
+    if (arc4random() % 2)
         std::cout << target << " has been robotomized\n";
     else
     {
