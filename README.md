@@ -31,13 +31,13 @@ initialization lists, static, const, and other basic syntax
 - **Module 06** – C++ casts
   Focus: `static_cast`, `dynamic_cast`, `reinterpret_cast`, `const_cast`, and when each is appropriate.
 
-- **Module 07** – C++ templates (**In progress**)
+- **Module 07** – C++ templates
   Focus: function templates, class templates, generic algorithms.
 
-- **Module 08** – Templated containers, iterators, algorithms (**Not started**)  
+- **Module 08** – Templated containers, iterators, algorithms
   Focus: container-like classes, iterators, simple algorithm implementations using templates.
 
-- **Module 09** – STL (**Not started**)  
+- **Module 09** – STL (**In Progress*)
   Focus: STL containers and algorithms within the project constraints.
 
 Each module follows the 42 subject structure and has its own `Makefile` and test mains.

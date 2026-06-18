@@ -5,7 +5,7 @@
 
 #define MAX_VAL 750
 #define MAX_SIZE 10
-#define MAGIC_NUMBER 42
+#define FT 42
 
 bool test_copy_assignment()
 {
@@ -25,9 +25,9 @@ bool test_copy_assignment()
         std::cerr << "assignment test failed\n";
         return 1;
     }
-    b[0] = MAGIC_NUMBER;
+    b[0] = FT;
     a[0] = 0;
-    if (b[0] != MAGIC_NUMBER)
+    if (b[0] != FT)
     {
         std::cerr << "deep copy test failed\n";
         return 1;
