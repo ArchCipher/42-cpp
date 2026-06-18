@@ -34,18 +34,18 @@ template <typename T> void fill_mutant_stack(T &mstack)
     mstack.push(0);
 }
 
-template <typename T> void fill_other(T &lst)
+template <typename T> void fill_other(T &other)
 {
-    lst.push_back(5);
-    lst.push_back(17);
-    std::cout << lst.back() << std::endl;
-    lst.pop_back();
-    std::cout << lst.back() << std::endl;
-    std::cout << lst.size() << std::endl;
-    lst.push_back(3);
-    lst.push_back(5);
-    lst.push_back(737);
-    lst.push_back(0);
+    other.push_back(5);
+    other.push_back(17);
+    std::cout << other.back() << std::endl;
+    other.pop_back();
+    std::cout << other.back() << std::endl;
+    std::cout << other.size() << std::endl;
+    other.push_back(3);
+    other.push_back(5);
+    other.push_back(737);
+    other.push_back(0);
 }
 
 // NOLINTNEXTLINE(bugprone-exception-escape)
