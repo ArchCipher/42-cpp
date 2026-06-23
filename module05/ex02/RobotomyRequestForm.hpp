@@ -16,7 +16,7 @@ class RobotomyRequestForm : public AForm
     void        performAction() const;
 
   public:
-    ~RobotomyRequestForm() {};
+    ~RobotomyRequestForm(){};
     RobotomyRequestForm(const std::string &target);
     RobotomyRequestForm(const RobotomyRequestForm &copy);
     RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);

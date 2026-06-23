@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
     : AForm(R_FORM, R_SIGN, R_EXEC), target(target)

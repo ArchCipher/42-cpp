@@ -28,4 +28,4 @@ re: fclean all
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re tidy
+.PHONY: all clean fclean re

@@ -10,8 +10,8 @@ class AForm;
 class Intern
 {
   public:
-    ~Intern() {};
-    Intern() {};
+    ~Intern(){};
+    Intern(){};
     Intern(const Intern &copy);
     Intern &operator=(const Intern &copy);
 

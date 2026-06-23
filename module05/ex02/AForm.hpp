@@ -1,9 +1,9 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
+#include <exception>
 #include <iosfwd>
 #include <string>
-#include <exception>
 
 class Bureaucrat;
 
@@ -18,7 +18,7 @@ class AForm
     const int         executeGrade;
 
   public:
-    virtual ~AForm() {};
+    virtual ~AForm(){};
     AForm(const std::string &name, int sign_grade, int execute_grade);
     AForm(const AForm &copy);
     AForm             &operator=(const AForm &copy);

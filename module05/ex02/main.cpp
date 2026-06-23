@@ -2,9 +2,9 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
-#include <cstdlib>
 
 void test_form(Bureaucrat &a, AForm *form)
 {

@@ -7,7 +7,7 @@
 
 Base *generate(void)
 {
-    switch (arc4random() % 3)
+    switch (std::rand() % 3)
     {
         case 0:
             return new A();

@@ -110,7 +110,7 @@ void test_spans(Span &nums)
 {
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
-        nums.addNumber(static_cast<int>(arc4random()) % MAX_VAL);
+        nums.addNumber(static_cast<int>(std::rand()) % MAX_VAL);
     std::cout << "-----test spans-----\n"
               << "nums size: " << nums.getVector().size() << '\n'
               << "shortest span: " << nums.shortestSpan() << '\n'

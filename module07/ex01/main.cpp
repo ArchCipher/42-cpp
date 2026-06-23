@@ -35,7 +35,7 @@ int main(void)
     // size_t len = MAX_VAL;
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int val = static_cast<int>(arc4random());
+        const int val = static_cast<int>(std::rand());
         numbers[i] = val;
         // numbers[i] = abs(val) % 26;
     }

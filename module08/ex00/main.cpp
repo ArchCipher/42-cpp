@@ -6,6 +6,7 @@
 #include <iostream>
 #include <iterator>
 #include <vector>
+#include <stdint.h> // uint32_t
 
 #define MAX_VAL 5
 #define FT 42
@@ -20,7 +21,7 @@
 
 int generator()
 {
-    const uint32_t val = arc4random() % 100;
+    const uint32_t val = std::rand() % 100;
     return (static_cast<int>(val));
 }
 

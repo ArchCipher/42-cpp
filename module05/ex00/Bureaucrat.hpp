@@ -1,9 +1,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <exception>
 #include <iosfwd>
 #include <string>
-#include <exception>
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150
@@ -32,7 +32,7 @@ class Bureaucrat
     int               grade;
 
   public:
-    ~Bureaucrat() {};
+    ~Bureaucrat(){};
     Bureaucrat(const std::string &name);
     Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &copy);

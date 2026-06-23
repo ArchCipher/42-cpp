@@ -139,7 +139,7 @@ static bool is_invalid(const std::string &s)
 }
 
 /*
-        Shell: use $'\n' (not '\n') so argv is one newline byte.
+    Shell: use $'\n' (not '\n') so argv is one newline byte.
     './convert '\n'' passes backslash + n (length 2).
 */
 static bool is_char_literal(const std::string &s)

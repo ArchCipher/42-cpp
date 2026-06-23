@@ -1,9 +1,9 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include <exception>
 #include <iosfwd>
 #include <string>
-#include <exception>
 
 class Bureaucrat;
 
@@ -18,7 +18,7 @@ class Form
     const int         executeGrade;
 
   public:
-    ~Form() {};
+    ~Form(){};
     Form(const std::string &name, int sign_grade, int execute_grade);
     Form(const Form &copy);
     Form              &operator=(const Form &copy);

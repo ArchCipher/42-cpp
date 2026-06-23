@@ -2,6 +2,16 @@
 #include <iostream>
 #include <string>
 
+void test_single_const()
+{
+    const int x = 1;
+    int       y = 2;
+    std::cout << "----------------\n"
+              << "const int x = " << x << ", int y = " << y << '\n'
+              << "min( x, y ) = " << ::min(x, y) << '\n'
+              << "max( x, y ) = " << ::max(x, y) << '\n';
+}
+
 // NOLINTNEXTLINE(bugprone-exception-escape)
 int main(void)
 {
@@ -17,9 +27,6 @@ int main(void)
     std::cout << "c = " << c << ", d = " << d << '\n';
     std::cout << "min( c, d ) = " << ::min(c, d) << '\n';
     std::cout << "max( c, d ) = " << ::max(c, d) << '\n';
-    const int x = 1;
-    int       y = 2;
-    std::cout << "min( x, y ) = " << ::min(x, y) << '\n';
-    std::cout << "max( x, y ) = " << ::max(x, y) << '\n';
+    test_single_const();
     return 0;
 }

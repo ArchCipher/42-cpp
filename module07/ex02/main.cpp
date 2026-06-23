@@ -14,7 +14,7 @@ bool test_copy_assignment()
 
     for (unsigned int i = 0; i < b.size(); i++)
     {
-        const int value = static_cast<int>(arc4random());
+        const int value = static_cast<int>(std::rand());
         if (i < a.size())
             a[i] = value;
         b[i] = value;
@@ -49,7 +49,7 @@ int main(void)
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = static_cast<int>(arc4random());
+        const int value = static_cast<int>(std::rand());
         numbers[i] = value;
         mirror[i] = value;
     }

@@ -42,7 +42,7 @@ class Span
 
     template <typename Iterator> void addRange(Iterator first, Iterator last)
     {
-        ptrdiff_t dist = std::distance(first, last);
+        std::ptrdiff_t dist = std::distance(first, last);
         if (dist < 0)
             throw std::invalid_argument("addrange: invalid range");
         if (dist > UINT_MAX ||
