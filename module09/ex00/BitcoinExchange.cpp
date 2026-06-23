@@ -4,12 +4,14 @@
 #include <sstream>
 #include <exception>
 #include <stdexcept>
+#include <cerrno>
+#include <cstdlib>
 
 BitcoinExchange::BitcoinExchange(const std::string &infile)
 {
     std::ifstream input(infile);
     if (!input.is_open())
-        throw std::exception(); // should throw "could not open database file.";
+        throw std::logic_error("could not open database file");
     std::string line;
     std::getline(input, line); // skip header
     while (std::getline(input, line))
@@ -115,8 +117,9 @@ void BitcoinExchange::parse_key(std::stringstream &ss, std::string &key,
 
 /*
 	valid date should be in the format Year-Month-Day
+    TODO: Error on invalid date: 2011-99-99
 */
-bool BitcoinExchange::valid_date(std::string &s)
+bool BitcoinExchange::valid_date(const std::string &s)
 {
     if (s.size() != 10)
         return false;
@@ -133,18 +136,26 @@ bool BitcoinExchange::valid_date(std::string &s)
     return true;
 }
 
-/*
-    std::stof exceptions:
-        std::invalid_argument
-        std::out_of_range
-*/
-float BitcoinExchange::getFloat(std::string &s)
+static float ft_stof(const std::string &s, size_t *idx)
 {
-    size_t p = 0;
-    float  f = std::stof(s, &p); // can throw
+    errno = 0;
+    char *p = NULL;
+    if (s.empty())
+        throw std::invalid_argument("empty string");
+    float f = std::strtof(s.c_str(), &p);
+    if (errno == ERANGE)
+        throw std::out_of_range("");
+    if (*p)
+        throw std::invalid_argument("invalid float");
+    if (idx)
+        *idx = static_cast<size_t>(p - s.c_str());
+    return f;
+}
+
+float BitcoinExchange::getFloat(const std::string &s)
+{
+    float  f = ft_stof(s, NULL); // can throw
     if (f < 0)
         throw std::logic_error("");
-    if (s[p])
-        throw std::invalid_argument("");
     return f;
 }

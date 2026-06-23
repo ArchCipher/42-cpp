@@ -1,6 +1,6 @@
 #include "RPN.hpp"
 #include <climits>
-#include <Exception>
+#include <exception>
 
 RPN::RPN(const RPN &copy) : st(copy.st) {}
 

@@ -4,6 +4,8 @@
 #include <climits>
 #include <cmath>
 #include <sstream>
+#include <cerrno>
+#include <cstdlib>
 
 static void        handle_char_literal(const std::string &s);
 static void        handle_numeric_literal(const std::string &s);
@@ -47,17 +49,29 @@ static void handle_char_literal(const std::string &s)
               << "double: " << static_cast<double>(c) << ".0\n";
 }
 
-/*
-        stod exceptions:
-                std::invalid_argument -> if no conversion could be performed
-                std::out_of_range
-*/
+static double ft_stod(const std::string &s, size_t *idx)
+{
+    errno = 0;
+    char *p = NULL;
+    const char *start = s.c_str();
+    if (s.empty())
+        throw std::invalid_argument("empty string");
+    double d = std::strtod(start, &p);
+    if (errno == ERANGE)
+        throw std::out_of_range("");
+    if (p == start)
+        throw std::invalid_argument("invalid double");
+    if (idx)
+        *idx = static_cast<size_t>(p - start);
+    return d;
+}
+
 static void handle_numeric_literal(const std::string &s)
 {
     size_t p = 0;
     try
     {
-        double d = std::stod(s, &p);
+        double d = ft_stod(s, &p);
         size_t len = s.length();
         if (p == len || (p == len - 1 && (s[p] == 'f' || s[p] == 'F')))
             print_from_double(d);

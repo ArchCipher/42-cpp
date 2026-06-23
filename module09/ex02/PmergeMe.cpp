@@ -10,7 +10,7 @@ static t_vec_parts split_vec(std::vector<std::pair<int, int> > &pairs);
 static t_dq_parts  split_deque(std::deque<std::pair<int, int> > &pairs);
 static bool        cmp_by_first(const std::pair<int, int> &a,
                                 const std::pair<int, int> &b);
-static int         get_num(const char *s);
+static int         ft_stoi(const char *s);
 static long        get_time();
 
 PmergeMe::PmergeMe(int n) : n(n)
@@ -47,7 +47,7 @@ void PmergeMe::fillContainers(char **av)
 {
     while (*av)
     {
-        int big = get_num(*av);
+        int big = ft_stoi(*av);
         av++;
         if (initialLst.size() < 5)
             initialLst.push_back(big);
@@ -59,7 +59,7 @@ void PmergeMe::fillContainers(char **av)
             dq.odd = big;
             break;
         }
-        int small = get_num(*av);
+        int small = ft_stoi(*av);
         av++;
         if (initialLst.size() < 5)
             initialLst.push_back(small);
@@ -247,7 +247,7 @@ static bool cmp_by_first(const std::pair<int, int> &a,
     return (a.first < b.first);
 }
 
-static int get_num(const char *s)
+static int ft_stoi(const char *s)
 {
     if (*s < '1' || *s > '9')
         throw std::exception();

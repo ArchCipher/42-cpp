@@ -10,9 +10,6 @@
     • Construction with an unsigned int n as a parameter: Creates an array of n
     elements initialized by default.
     Tip: Try to compile int * a = new int(); then display *a.
-    Value initialised to 0: Array(unsigned int n) : arr(new T[n]()), n(n) {}
-    By default, the array is garbage value(??) or 0?.
-    Without this valgrind will show errors, but subject requires initialised to default.
     • You MUST use the operator new[] to allocate memory.
         Preventive allocation (allocating memory in advance) is forbidden.
         Your program must never access non-allocated memory.
@@ -55,7 +52,7 @@ template <typename T> class Array
 
     Array() : arr(0), n(0) {}
 
-    Array(unsigned int n) : arr(new T[n]), n(n) {}
+    Array(unsigned int n) : arr(new T[n]()), n(n) {}
 
     Array(const Array &copy) : arr(new T[copy.n]), n(copy.n)
     {

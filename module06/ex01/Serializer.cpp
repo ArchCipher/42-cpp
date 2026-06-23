@@ -7,13 +7,13 @@ Serializer &Serializer::operator=(const Serializer &)
 
 uintptr_t Serializer::serialize(Data *ptr)
 {
-    // NOLONTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
     return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 Data *Serializer::deserialize(uintptr_t raw)
 {
-    // NOLONTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-reinterpret-cast)
     return (reinterpret_cast<Data *>(raw));
 }
 

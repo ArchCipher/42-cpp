@@ -3,6 +3,7 @@
 
 #include "Data.hpp"
 #include <iostream>
+#include <stdint.h>
 
 /*
         class Serializer, which cannot be initialized by the user.
