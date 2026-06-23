@@ -2,6 +2,7 @@
 #include "Intern.hpp"
 #include <ctime>
 #include <iostream>
+#include <cstdlib>
 
 void test_intern(const Intern &random_intern, const std::string &form_name,
                  const std::string &target, Bureaucrat &bureaucrat)

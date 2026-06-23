@@ -24,7 +24,7 @@ ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 
 void ShrubberyCreationForm::performAction() const
 {
-    std::ofstream my_file(target + "_shrubbery");
+    std::ofstream my_file((target + "_shrubbery").c_str());
     if (!my_file.is_open())
         throw ShrubberyFailException();
     my_file << "    *\n";

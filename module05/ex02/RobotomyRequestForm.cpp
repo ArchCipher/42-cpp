@@ -1,5 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
     : AForm(R_FORM, R_SIGN, R_EXEC), target(target)
@@ -25,7 +26,7 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
 void RobotomyRequestForm::performAction() const
 {
     std::cout << "*** DRILLING NOISES ***\n";
-    if (arc4random() % 2)
+    if (std::rand() % 2)
         std::cout << target << " has been robotomized\n";
     else
     {

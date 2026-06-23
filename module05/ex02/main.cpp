@@ -4,6 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <ctime>
 #include <iostream>
+#include <cstdlib>
 
 void test_form(Bureaucrat &a, AForm *form)
 {
