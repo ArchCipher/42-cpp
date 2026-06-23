@@ -6,6 +6,8 @@
 #include <sstream>
 #include <cerrno>
 #include <cstdlib>
+#include <iostream>
+#include <stdexcept>
 
 static void        handle_char_literal(const std::string &s);
 static void        handle_numeric_literal(const std::string &s);

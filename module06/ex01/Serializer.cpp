@@ -1,4 +1,5 @@
 #include "Serializer.hpp"
+#include <iostream>
 
 Serializer &Serializer::operator=(const Serializer &)
 {

@@ -2,7 +2,6 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <exception>
 #include <stdexcept>
 #include <cerrno>
 #include <cstdlib>

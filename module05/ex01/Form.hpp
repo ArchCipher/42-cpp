@@ -1,7 +1,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include <iostream>
+#include <iosfwd>
 #include <string>
 #include <exception>
 

@@ -2,7 +2,7 @@
 #define SERIALIZER_HPP
 
 #include "Data.hpp"
-#include <iostream>
+#include <iosfwd>
 #include <stdint.h>
 
 /*

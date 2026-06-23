@@ -3,6 +3,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <ctime>
+#include <iostream>
 
 void test_form(Bureaucrat &a, AForm *form)
 {

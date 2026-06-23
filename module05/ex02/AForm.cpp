@@ -1,5 +1,6 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 AForm::AForm(const std::string &name, int sign_grade, int execute_grade)
     : name(name), isSigned(false), signGrade(sign_grade),

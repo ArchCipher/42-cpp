@@ -1,7 +1,7 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
-#include <iostream>
+#include <iosfwd>
 #include <string>
 #include <exception>
 

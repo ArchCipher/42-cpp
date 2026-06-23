@@ -1,4 +1,5 @@
 #include "PresidentialPardonForm.hpp"
+#include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
     : AForm(P_FORM, P_SIGN, P_EXEC), target(target)

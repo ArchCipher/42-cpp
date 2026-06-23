@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <iostream>
 
 void test_sign_form(Bureaucrat &a, int sign_grade)
 {

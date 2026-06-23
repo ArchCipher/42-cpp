@@ -1,4 +1,5 @@
 #include "Intern.hpp"
+#include <iostream>
 
 static const std::string form_names[] = {
     "shrubbery creation", "robotomy request", "presidential pardon"};

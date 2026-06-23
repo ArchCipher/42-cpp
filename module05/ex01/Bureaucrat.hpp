@@ -2,8 +2,6 @@
 #define BUREAUCRAT_HPP
 
 #include "Form.hpp"
-#include <iostream>
-#include <string>
 
 #define MAX_GRADE 1
 #define MIN_GRADE 150

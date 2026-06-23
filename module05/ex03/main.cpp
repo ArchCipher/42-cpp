@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
 #include <ctime>
+#include <iostream>
 
 void test_intern(const Intern &random_intern, const std::string &form_name,
                  const std::string &target, Bureaucrat &bureaucrat)

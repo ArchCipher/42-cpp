@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
 
 Bureaucrat::Bureaucrat(const std::string &name) : name(name), grade(MIN_GRADE)
 {

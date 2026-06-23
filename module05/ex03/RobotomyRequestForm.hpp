@@ -2,6 +2,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+
 #define R_FORM "Robotomy Request Form"
 #define R_SIGN 72
 #define R_EXEC 45

@@ -1,4 +1,5 @@
 #include "ScalarConverter.hpp"
+#include <iostream>
 
 /*
 static const std::string strs[] = {
