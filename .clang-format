@@ -9,3 +9,4 @@ IndentCaseLabels: true
 AllowShortFunctionsOnASingleLine: Empty
 AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments
 SeparateDefinitionBlocks: Always
+ReflowComments: false

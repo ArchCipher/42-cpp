@@ -37,7 +37,7 @@ initialization lists, static, const, and other basic syntax
 - **Module 08** – Templated containers, iterators, algorithms
   Focus: container-like classes, iterators, simple algorithm implementations using templates.
 
-- **Module 09** – STL (**In Progress*)
+- **Module 09** – STL
   Focus: STL containers and algorithms within the project constraints.
 
 Each module follows the 42 subject structure and has its own `Makefile` and test mains.
