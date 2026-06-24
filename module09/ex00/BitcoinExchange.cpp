@@ -1,10 +1,10 @@
 #include "BitcoinExchange.hpp"
 #include <fstream>
 #include <iostream>
-#include <sstream>
 #include <stdexcept>
 #include <cerrno>
 #include <cstdlib>
+#include <cctype>
 
 BitcoinExchange::BitcoinExchange(const std::string &infile)
 {
@@ -18,34 +18,10 @@ BitcoinExchange::BitcoinExchange(const std::string &infile)
 }
 
 /*
-    each line should be in the format "Year-Month-Day,exchange_rate"
-*/
-void BitcoinExchange::fillMap(std::string &line)
-{
-    std::stringstream             ss(line);
-    std::pair<std::string, float> kv_pair;
-    parse_key(ss, kv_pair.first, ',');
-    std::string value;
-    std::getline(ss, value);
-    try
-    {
-        kv_pair.second = getFloat(value); // can throw
-        std::pair<std::map<std::string, float>::const_iterator, bool> res =
-            db.insert(kv_pair);
-        if (!res.second)
-            throw std::logic_error("duplicate key");
-    }
-    catch (const std::exception &)
-    {
-        throw std::logic_error("invalid exchange_rate");
-    }
-}
-
-/*
     Each line should be in the format "Year-Month-Day | value"
     Avalid value must be either a float or a positive integer, between 0 & 1000
 */
-void BitcoinExchange::getValue(std::string &s)
+void BitcoinExchange::getValue(const std::string &s)
 {
     std::stringstream             ss(s);
     std::pair<std::string, float> kv_pair;
@@ -63,7 +39,7 @@ void BitcoinExchange::getValue(std::string &s)
         {
             if (it == db.begin())
             {
-                std::cerr << "Error: no data found" << " => " << kv_pair.first
+                std::cout << "Error: no data found" << " => " << kv_pair.first
                           << '\n';
                 return;
             }
@@ -75,15 +51,39 @@ void BitcoinExchange::getValue(std::string &s)
     }
     catch (const std::invalid_argument &)
     {
-        std::cerr << "Error: bad input" << " => " << kv_pair.first << '\n';
+        std::cout << "Error: bad input" << " => " << kv_pair.first << '\n';
     }
     catch (const std::out_of_range &)
     {
-        std::cerr << "Error: too large a number.\n";
+        std::cout << "Error: too large a number.\n";
     }
     catch (const std::logic_error &)
     {
-        std::cerr << "Error: not a positive number.\n";
+        std::cout << "Error: not a positive number.\n";
+    }
+}
+
+/*
+    each line should be in the format "Year-Month-Day,exchange_rate"
+*/
+void BitcoinExchange::fillMap(const std::string &line)
+{
+    std::stringstream             ss(line);
+    std::pair<std::string, float> kv_pair;
+    parse_key(ss, kv_pair.first, ',');
+    std::string value;
+    std::getline(ss, value);
+    try
+    {
+        kv_pair.second = getFloat(value); // can throw
+        std::pair<std::map<std::string, float>::const_iterator, bool> res =
+            db.insert(kv_pair);
+        if (!res.second)
+            throw std::logic_error("duplicate key");
+    }
+    catch (const std::exception &)
+    {
+        throw std::logic_error("invalid exchange_rate");
     }
 }
 
@@ -115,24 +115,50 @@ void BitcoinExchange::parse_key(std::stringstream &ss, std::string &key,
 }
 
 /*
-	valid date should be in the format Year-Month-Day
-    TODO: Error on invalid date: 2011-99-99
+	Evenly divisible by 4, and
+	- not evenly diviible by 100, or
+	- even divisible by 100 and 400.
+*/
+static bool is_leap_year(int year)
+{
+	return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+}
+
+/*
+	Valid date should be in the format Year-Month-Day
 */
 bool BitcoinExchange::valid_date(const std::string &s)
 {
     if (s.size() != 10)
         return false;
-    for (size_t i = 0; i < s.size(); i++)
-    {
-        if (i == 4 || i == 7)
-        {
-            if (s[i] != '-')
-                return false;
-        }
-        else if (!std::isdigit(s[i]))
+	if (s[4] != '-' || s[7] != '-')
+		return false;
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (!std::isdigit(s[i]))
             return false;
-    }
-    return true;
+	}
+	if (!std::isdigit(s[5]) || !std::isdigit(s[6])
+		|| !std::isdigit(s[8]) || !std::isdigit(s[9]))
+		return false;
+	int year = std::atoi(s.substr(0, 4).c_str());
+	int month = std::atoi(s.substr(5, 2).c_str());
+	int date = std::atoi(s.substr(8, 2).c_str());
+    if (date < 1)
+		return false;
+	switch (month)
+	{
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			return (date <= 31);
+		case 4: case 6: case 9: case 11:
+			return (date <= 30);
+		case 2:
+			if (is_leap_year(year))
+				return (date <= 29);
+			return (date <= 28);	
+		default:
+			return false;	
+	}
 }
 
 static float ft_stof(const std::string &s, size_t *idx)
@@ -155,6 +181,6 @@ float BitcoinExchange::getFloat(const std::string &s)
 {
     float  f = ft_stof(s, NULL); // can throw
     if (f < 0)
-        throw std::logic_error("");
+        throw std::logic_error("invalid float");
     return f;
 }
