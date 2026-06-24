@@ -20,13 +20,13 @@ int main(int ac, char **av)
 {
     if (ac != 2)
     {
-        std::cerr << "Error: could not open file.\n";
+        std::cout << "Error: could not open file.\n";
         return 1;
     }
     std::ifstream input(av[1]);
     if (!input.is_open())
     {
-        std::cerr << "Error: could not open file.\n";
+        std::cout << "Error: could not open file.\n";
         return 1;
     }
     try
@@ -39,7 +39,7 @@ int main(int ac, char **av)
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Error: " << e.what() << '\n';
+        std::cerr << "Error in database: " << e.what() << '\n';
         return 1;
     }
     return 0;

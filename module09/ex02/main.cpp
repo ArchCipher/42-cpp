@@ -24,7 +24,7 @@ int main(int ac, char **av)
 {
     if (ac == 1)
     {
-        std::cout << "Usage: ./PmergeMe 3 5 9 7 42\n";
+        std::cerr << "Usage: ./PmergeMe 3 5 9 7 42\n";
         return 1;
     }
     PmergeMe c(ac - 1);

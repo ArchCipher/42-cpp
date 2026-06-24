@@ -5,7 +5,7 @@ int main(int ac, char **av)
 {
     if (ac != 2)
     {
-        std::cout << "Usage: ./RPN \"7 7 * 7 -\"\n";
+        std::cerr << "Usage: ./RPN \"7 7 * 7 -\"\n";
         return 1;
     }
     try
