@@ -12,12 +12,12 @@ class RPN
     int             pop();
 
   public:
-    ~RPN() {};
-    RPN() {};
-	RPN(const RPN &copy);
-	RPN &operator=(const RPN &copy);
+    ~RPN(){};
+    RPN(){};
+    RPN(const RPN &copy);
+    RPN &operator=(const RPN &copy);
 
-    int evaluate(const std::string &s);
+    int  evaluate(const std::string &s);
 };
 
 #endif

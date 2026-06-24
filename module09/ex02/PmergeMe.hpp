@@ -2,9 +2,9 @@
 #define PMERGEME_HPP
 
 #include <deque>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
 
 typedef struct s_dq_parts
 {
@@ -51,7 +51,7 @@ class PmergeMe
     }
 
   public:
-    ~PmergeMe() {};
+    ~PmergeMe(){};
     PmergeMe(int i);
     void sortContainers(char **av);
 };

@@ -10,13 +10,13 @@ int main(int ac, char **av)
     }
     try
     {
-		RPN rpn;
+        RPN rpn;
         int res = rpn.evaluate(av[1]);
         std::cout << res << '\n';
     }
     catch (const std::exception &)
     {
         std::cerr << "Error\n";
-		return 1;
+        return 1;
     }
 }

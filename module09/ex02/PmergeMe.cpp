@@ -109,7 +109,7 @@ std::vector<int> PmergeMe::sortVecBigs(t_vec_parts &vec)
     }
     if (vec.has_odd)
     {
-        std::vector<int>::const_iterator pos =
+        std::vector<int>::iterator pos =
             std::lower_bound(chain.begin(), chain.end(), vec.odd);
         chain.insert(pos, vec.odd);
     }
@@ -140,7 +140,7 @@ std::deque<int> PmergeMe::sortDequeBigs(t_dq_parts &dq)
     }
     if (dq.has_odd)
     {
-        std::deque<int>::const_iterator pos =
+        std::deque<int>::iterator pos =
             std::lower_bound(chain.begin(), chain.end(), dq.odd);
         chain.insert(pos, dq.odd);
     }

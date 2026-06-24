@@ -1,14 +1,14 @@
 #include "BitcoinExchange.hpp"
+#include <cctype>
+#include <cerrno>
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
-#include <cerrno>
-#include <cstdlib>
-#include <cctype>
 
 BitcoinExchange::BitcoinExchange(const std::string &infile)
 {
-    std::ifstream input(infile);
+    std::ifstream input(infile.c_str());
     if (!input.is_open())
         throw std::logic_error("could not open database file");
     std::string line;
@@ -39,8 +39,8 @@ void BitcoinExchange::getValue(const std::string &s)
         {
             if (it == db.begin())
             {
-                std::cout << "Error: no data found" << " => " << kv_pair.first
-                          << '\n';
+                std::cout << "Error: no data found"
+                          << " => " << kv_pair.first << '\n';
                 return;
             }
             it--;
@@ -51,7 +51,8 @@ void BitcoinExchange::getValue(const std::string &s)
     }
     catch (const std::invalid_argument &)
     {
-        std::cout << "Error: bad input" << " => " << kv_pair.first << '\n';
+        std::cout << "Error: bad input"
+                  << " => " << kv_pair.first << '\n';
     }
     catch (const std::out_of_range &)
     {
@@ -121,7 +122,7 @@ void BitcoinExchange::parse_key(std::stringstream &ss, std::string &key,
 */
 static bool is_leap_year(int year)
 {
-	return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+    return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
 }
 
 /*
@@ -131,34 +132,43 @@ bool BitcoinExchange::valid_date(const std::string &s)
 {
     if (s.size() != 10)
         return false;
-	if (s[4] != '-' || s[7] != '-')
-		return false;
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (!std::isdigit(s[i]))
+    if (s[4] != '-' || s[7] != '-')
+        return false;
+    for (size_t i = 0; i < 4; i++)
+    {
+        if (!std::isdigit(s[i]))
             return false;
-	}
-	if (!std::isdigit(s[5]) || !std::isdigit(s[6])
-		|| !std::isdigit(s[8]) || !std::isdigit(s[9]))
-		return false;
-	int year = std::atoi(s.substr(0, 4).c_str());
-	int month = std::atoi(s.substr(5, 2).c_str());
-	int date = std::atoi(s.substr(8, 2).c_str());
+    }
+    if (!std::isdigit(s[5]) || !std::isdigit(s[6]) || !std::isdigit(s[8]) ||
+        !std::isdigit(s[9]))
+        return false;
+    int year = std::atoi(s.substr(0, 4).c_str());
+    int month = std::atoi(s.substr(5, 2).c_str());
+    int date = std::atoi(s.substr(8, 2).c_str());
     if (date < 1)
-		return false;
-	switch (month)
-	{
-		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-			return (date <= 31);
-		case 4: case 6: case 9: case 11:
-			return (date <= 30);
-		case 2:
-			if (is_leap_year(year))
-				return (date <= 29);
-			return (date <= 28);	
-		default:
-			return false;	
-	}
+        return false;
+    switch (month)
+    {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return (date <= 31);
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            return (date <= 30);
+        case 2:
+            if (is_leap_year(year))
+                return (date <= 29);
+            return (date <= 28);
+        default:
+            return false;
+    }
 }
 
 static float ft_stof(const std::string &s, size_t *idx)
@@ -179,7 +189,7 @@ static float ft_stof(const std::string &s, size_t *idx)
 
 float BitcoinExchange::getFloat(const std::string &s)
 {
-    float  f = ft_stof(s, NULL); // can throw
+    float f = ft_stof(s, NULL); // can throw
     if (f < 0)
         throw std::logic_error("invalid float");
     return f;
