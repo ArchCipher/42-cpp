@@ -8,6 +8,7 @@ DEPS = $(OBJS:.o=.d)
 
 CXX = c++
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+FLAGS += -O2
 # SFLAGS = -fsanitize=address
 
 %.o:%.cpp
