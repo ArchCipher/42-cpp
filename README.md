@@ -42,6 +42,10 @@ initialization lists, static, const, and other basic syntax
 
 Each module follows the 42 subject structure and has its own `Makefile` and test mains.
 
+<p align="center">
+  <img src="docs/cpp-demo.gif" alt="cpp module 04 ex03 demo" width="800">
+</p>
+
 ---
 
 ## Build and Run
